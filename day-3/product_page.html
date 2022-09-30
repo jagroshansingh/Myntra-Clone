@@ -58,8 +58,18 @@
             cursor: pointer;
         }
         #pp-hover-wishlist{
-            border: 1px solid;   
-            display: none;       
+            border: 1px solid grey;   
+            /* display: none; */
+            /* position: relative;
+            top: -140px; */
+            padding: 10px;
+            background-color: white;
+            text-align: center;
+            /* visibility: hidden; */
+        }
+        #pp-hover-wishlist:hover{
+          border: 1px solid;
+          cursor: pointer;
         }
     </style>
 
@@ -214,9 +224,9 @@
             <div><p id="pp-down-hl">Price: High to Low</p></div>
             <div><p id="pp-down-lh">Price: Low to High</p></div>          
         </div>
-        <div id="pp-hover-wishlist">
+        <!-- <div id="pp-hover-wishlist">
             <p>Wishlist</p>
-        </div>
+        </div> -->
 
     </div>
     
@@ -518,16 +528,24 @@
     
     function show(mensData)
     {
-        mensData.forEach(function(el)
+        mensData.forEach(function(el,i)
         {
         let image=document.createElement("img")
         image.src=el.image_url
+        let hovr=document.createElement("div")
+        hovr.innerHTML="<i id='pp-heart-red' class='fa-regular fa-heart'></i> WISHLIST"
+        hovr.setAttribute("id","pp-hover-wishlist")
+        hovr.addEventListener("click",function()
+        {
+          hovr.style.backgroundColor="red"
+          send_to_wishlist(el,i)
+        })
         let name=document.createElement("h4")
         name.innerText=el.name
         let price=document.createElement("h4")
         price.innerText=el.price
         let div=document.createElement("div")
-        div.append(image,name,price)
+        div.append(image,hovr,name,price)
         pp_card.append(div)
         })
         document.querySelector("#pp-quantity").innerText=mensData.length
@@ -917,20 +935,34 @@
      })
 
      //add to wishlist while hovering product image
-     let wishlist=document.querySelectorAll("#pp-card>div")
-     let div=document.querySelector("#pp-hover-wishlist")
-     wishlist.forEach(function(el)
-     {
-        el.addEventListener("mouseover",function()
-        {         
-            div.style.display="block"
-            el.append(div)
-        })
-        el.addEventListener("mouseout",function()
-        {
-            div.style.display="none"
-            el.append(div)
-        })
-     })
-     
+    //  let wishlist=document.querySelectorAll("#pp-card>div")
+    //  let div=document.querySelector("#pp-hover-wishlist")
+    //  wishlist.forEach(function(el)
+    //  {
+    //     el.addEventListener("mouseover",function()
+    //     {         
+    //         div.style.visibility="visible"
+    //         el.append(div)
+    //     })
+    //     el.addEventListener("mouseout",function()
+    //     {
+    //         div.style.visibility="hidden"
+    //         el.append(div)
+    //     })
+    //  })
+    
+    //sending data to ls through wishlist click
+    // document.querySelector("#pp-hover-wishlist").addEventListener("click",function()
+    // {
+    //   document.querySelector("#pp-heart-red").style.backgroundColor="red"
+
+    // })
+
+    let ar=JSON.parse(localStorage.getItem("wish-list"))||[];
+   function send_to_wishlist(el,i)
+   {
+    ar.push(el)
+    localStorage.setItem("wish-list",JSON.stringify(ar))
+   }
+
 </script>
