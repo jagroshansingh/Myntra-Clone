@@ -14,18 +14,15 @@
             justify-content: space-between;
         }
         #bag-main{
-            width:70%;
+            width:80%;
             margin: auto;
-            border: 0px solid ;
+            border: 1px solid ;
             display: flex;
-            justify-content: space-between;
         }
         #bag-product-section{
-            width: 60%;
-            border: px solid;
+            width: 65%;
+            border: 1px solid;
             margin-top: 23px;
-            display: grid;
-            gap: 10px;
         }
         #bag-product-section>div{
             padding: 12px;
@@ -37,8 +34,8 @@
             padding: 5px;
         }
         #bag-price-section{
-            border-left: 1px solid;
-            width: 39%;
+            border: 1px solid;
+            width: 35%;
         }
         #bag-gift{
             display: flex;
@@ -53,67 +50,19 @@
             text-align: center;
             padding: 1px 0px;
         }
-        .bag-elements{
-            display: flex;
-            justify-content:space-between;
-        }
-        .bag-cancel{
-            display: flex;
-            justify-content: flex-end;
-            padding-right: 4px;
-        }
-        #bag-cards{
-            display: grid;
-            gap: 9px;
-        }
-        #bag-cards>div{
-            border:1px solid;
-        }
-        #bag-cards img{
-            width: 100%;
-        }
-        #bag-cards>div>div:nth-child(1){
-            width: 30%;
-        }
-        #bag-cards>div>div:nth-child(2){
-            width: 60%;
-        }
-        #bag-cards>div>div:nth-child(3){
-            padding:5px;
-        }
-        #bag-nav>div:nth-child(1), #bag-nav>div:nth-child(3){
-            width: 7%;
-        }
-        #bag-nav img{
-            width: 100%;
-        }
-        #bag-nav-div{
-            display: flex;
-            align-items: center;
-        }
-        
     </style>
-
-<script src="https://kit.fontawesome.com/81ff3434ff.js" crossorigin="anonymous"></script>
-
 </head>
 <body>
     <div>
         <div id="bag-nav" class="bag-space-btw">
             <div>
-                <img src="https://images.news18.com/ibnlive/uploads/2021/01/1611996262_ynt.jpeg?im=FitAndFill,width=1200,height=675" alt="">
+                <img src="" alt="">
             </div>
             <div>
                 <h3><u style="color:green ;">BAG</u>-------ADDRESS-------PAYMENTS</h3>
             </div>
-            <div id="bag-nav-div">
-                <div>
-                    <img src="https://constant.myntassets.com/checkout/assets/img/sprite-secure.png" alt="">
-                </div>
-                <div>
-                    <p>100% SECURE</p>
-                </div>
-                 
+            <div>
+                <img src="https://constant.myntassets.com/checkout/assets/img/sprite-secure.png" alt=""> 100% SECURE
             </div>
         </div>
         <div id="bag-main">
@@ -129,10 +78,10 @@
                 <div>
                     <p>Yay! No convenience fee on this order</p>
                 </div>
-                <div style="border: none;">
-                    <h4><span class="bagcount"></span> ITEMS</h4>
+                <div>
+                    <h4><span class="count"></span> ITEMS</h4>
                 </div>
-                <div id="bag-cards" style="border: none;">
+                <div id="bag-cards">
 
                 </div>
             </div>
@@ -154,13 +103,13 @@
                         <div>
                             <h4>Buying for a loved one?</h4>
                              <p>Gift wrap and personalised message on card,<br>Only for Rs 25</p>
-                            <h3 style="color: red;">ADD GIFT WRAP</h3>
+                            <h3>ADD GIFT WRAP</h3>
                          </div>
                      </div>
                  </div>
                  <hr>
                  <div>
-                    <h4>PRICE DETAILS( <span class="bagcount"></span> Items)</h4>
+                    <h4>PRICE DETAILS(<span class="count"></span>Items)</h4>
                     <div class="bag-space-btw">
                         <div>
                             <p>Total MRP</p>
@@ -172,15 +121,15 @@
                             <p>k</p>
                             <p>k</p>
                             <p style="color: red;">Apply Coupon</p>
-                            <p><strike>99</strike> <span style="color: green;">FREE</span> </p>
+                            <p><strike>99</strike> FREE</p>
                         </div>
                     </div>                  
                  </div>
                  <hr>
                  <div>
                     <div class="bag-space-btw">
-                        <p >Total Amount</p>
-                        <p><i class="fa-solid fa-indian-rupee-sign"></i> <b id="bag-total-amount"></b> </p>
+                        <p>Total Amount</p>
+                        <p>fef</p>
                     </div>
                     <div id="bag-place-order">
                         <h3>PLACE ORDER</h3>
@@ -192,56 +141,5 @@
 </body>
 </html>
 <script>
-    let bagdata=JSON.parse(localStorage.getItem("bag-list"))
-    console.log(bagdata)
     
-    let totalamount=0;
-    let mother_div=document.querySelector("#bag-cards")
-    bagdata.forEach(function(el,i)
-    {
-        let div=document.createElement("div")
-        div.setAttribute("class","bag-elements")
-        
-        let imgdiv=document.createElement("div")
-        let image=document.createElement("img")
-        image.src=el.image_url;
-        imgdiv.append(image)
-
-        let descdiv=document.createElement("div")
-        let name=document.createElement("p")
-        name.innerText=el.name;
-        let price=document.createElement("h4")
-        price.innerText=el.price;
-        descdiv.append(name,price)
-
-        let numprice=+el.price
-        totalamount+=numprice;
-
-        let canceldiv=document.createElement("div")
-        canceldiv.innerHTML="<i class='fa-solid fa-xmark'></i>"
-        canceldiv.setAttribute("class","bag-cancel")
-        canceldiv.addEventListener("click",function()
-        {
-            remov(el,i)
-        })
-        
-        div.append(imgdiv,descdiv,canceldiv)
-        mother_div.append(div)
-    })
-    console.log(totalamount)
-
-    function remov(el,i)
-    {
-        bagdata.splice(i,1)
-        localStorage.setItem("bag-list",JSON.stringify(bagdata))
-        window.location.reload()       
-    }
-
-    let noofitems=document.querySelectorAll(".bagcount")
-    noofitems.forEach(function(el)
-    {
-        el.innerText=bagdata.length
-    })
-    
-    document.querySelector("#bag-total-amount").innerText=totalamount
 </script>
