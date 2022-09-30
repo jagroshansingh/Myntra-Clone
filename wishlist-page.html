@@ -5,8 +5,114 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #wl{
+            width: 90%;
+            margin: auto;
+            border: 1px solid;
+        }
+        #wl img{
+            width: 100%;
+        }
+        #wl-append{
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            gap: 40px;
+        }
+        .wl-cards{
+            border: 1px solid gray;
+        }
+        .wl-movetobag{
+            border: 1px solid black;
+            text-align: center;
+            padding: 10px;
+            color: red;
+            font-weight: bold;
+        }
+        .wl-movetobag:hover{
+            cursor: pointer;
+        }
+        .wl-nameprice{
+            padding:5px;
+        }
+        .wl-cancel{
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 4px;
+        }
+    </style>
+
+<script src="https://kit.fontawesome.com/81ff3434ff.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    <div id="wl">
+        <div>
+            <p><b>My Wishlist: </b><span id="count"></span> items</p>
+        </div>
+        <div id="wl-append">
+
+        </div>
+    </div>
 </body>
 </html>
+<script>
+    let data=JSON.parse(localStorage.getItem("wish-list"))
+    console.log(data)
+
+    let mother_div=document.querySelector("#wl-append")
+    data.forEach(function(el,i)
+    {
+        let cancel=document.createElement("div")
+        cancel.innerHTML="<i class='fa-solid fa-xmark'></i>"
+        cancel.setAttribute("class","wl-cancel")
+        cancel.addEventListener("click",function()
+        {
+            remov(el,i)
+        })
+
+        let div=document.createElement("div")
+        div.setAttribute("class","wl-cards")
+
+        let image=document.createElement("img")
+        image.src=el.image_url;
+
+        let name=document.createElement("p")
+        name.innerText=el.name;
+
+        let price=document.createElement("h4")
+        price.innerText=el.price;
+
+        let mini_div=document.createElement("div")
+        mini_div.append(name,price)
+        mini_div.setAttribute("class","wl-nameprice")
+
+        let bag=document.createElement("div")
+        bag.setAttribute("class","wl-movetobag")
+        bag.innerText="MOVE TO BAG"
+        bag.addEventListener("click",function()
+        {
+            baglist(el,i)
+        })
+
+        div.append(cancel,image,mini_div,bag)
+        mother_div.append(div)
+    })
+
+    let arr=JSON.parse(localStorage.getItem("bag-list"))||[]
+    function baglist(el,i)
+    {
+        data.splice(i,1)
+        arr.push(el)
+        localStorage.setItem("bag-list",JSON.stringify(arr))
+        localStorage.setItem("wish-list",JSON.stringify(data))
+        window.location.reload()
+    }
+
+    function remov(el,i)
+    {
+        data.splice(i,1)
+        localStorage.setItem("wish-list",JSON.stringify(data))
+        window.location.reload()       
+    }
+    document.querySelector("#count").innerText=data.length
+</script>
