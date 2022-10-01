@@ -7,15 +7,19 @@
     <title>Document</title>
     <!-- <link rel="stylesheet" href="navbar.css"> -->
     <style>
-        #nav{
+         #nav{
             display: flex;
-            border: 1px solid;
+            border: 0px solid;
             justify-content:space-between;
             align-items: center;
             padding:0px 4%;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            position: sticky;
+            top:0px;
+            background-color: white;
         }    
         #nav>div{
-            border: 1px solid;
+            border: 0px solid;
         }
         #nav>div:nth-child(1)>img{
             width: 100%;
@@ -25,15 +29,22 @@
             width: 8%;
         }
         #nav>div:nth-child(2){
-            width: 50%;
+            width: 45%;
             display: flex;
             justify-content: space-between;
         }
         #nav>div:nth-last-child(1){
-            width:10%;
+            width:11%;
             display: flex;
             justify-content: space-between;
             cursor: pointer;
+            align-items: center;
+            border: 0px solid;
+        }
+        #nav>div:nth-last-child(1)>div{
+            border: 0px solid;
+            text-align: center;
+            display: grid;
         }
       
         #nav>div:nth-child(3)>input{
@@ -41,9 +52,10 @@
             width:100%;
             background-color: azure;
         }
+     
         #nav_search{
             display:flex;
-            width:20%;
+            width:25%;
             align-items: center;
             background-color: azure;
         }
@@ -53,18 +65,30 @@
         /* #nav>div:nth-last-child(1):hover{
             cursor:pointer;
         } */
-        #drop{
-            border:1px solid;
+        #drop{  
+            border:0px solid;
             height: 400px;
             width:72%;
             background-color: green;
             position:absolute;
-            top:75px;
+            top:65px;
             left:200px;
             display:none;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+        }
+        #drop>div>div{
+            width: 20%;
+            padding: 12px;
+            line-height: 7px;
+            
+        }
+        #drop>div>div>p:hover{
+            cursor: pointer;
+            font-weight: bolder;
         }
         #profile_drop{
-            border:1px solid;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border:0px solid;
             line-height: 50%;
             width:20%;
             position:absolute;
@@ -72,13 +96,15 @@
             right:20px;
             display: none;
             padding-left: 10px;
+            background-color: white;
         }
         #profile_drop>p:hover{
             font-weight: bolder;
             cursor: pointer;
         }
-        table{
-            border: 1px solid;
+        .nav-color{
+            color: red;
+            font-weight: bolder;
         }
     </style>
 
@@ -101,7 +127,7 @@
         </div>
         <div id="nav_search">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="search" placeholder="Search for products, brands and more">
+            <input style="border: none;" type="search" placeholder="Search for products, brands and more">
         </div>
         <div>
             <div id="nav_profile">
@@ -119,116 +145,94 @@
         </div>
     </div>
     <div id="drop">
-        <table>
-            <tbody>
-                <tr>
-                    <td>Topwear</td>
-                    <td>Bottomwear</td>
-                    <td>Footwear</td>
-                    <td>Sports & Active Wear</td>
-                    <td>Fashion Accessories</td>
-                </tr>
-                <tr>
-                    <td>Tshirts</td>
-                    <td>Jeans</td>
-                    <td>Casual Shoes</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                </tr>
-                <tr>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                </tr>
-                <tr>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                </tr><tr>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                </tr><tr>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                </tr><tr>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                </tr><tr>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                </tr><tr>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                </tr><tr>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                </tr><tr>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                </tr><tr>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                </tr><tr>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                </tr><tr>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                </tr><tr>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                </tr><tr>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                </tr><tr>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                    <td>Dummy</td>
-                </tr>
-            </tbody>
-        </table>
+        <div style="display: flex;">
+            <div style="background-color: white;">
+                <p class="nav-color">Boys Clothing</p>
+                <p>T-Shirts</p>
+                <p>Shirts</p>
+                <p>Shorts</p>
+                <p>Jeans</p>
+                <p>Trousers</p>
+                <p>Clothing Sets</p>
+                <p>Ethnic Wear</p>
+                <p>Track Pants & Pyjamas</p>
+                <p>Jacket, Sweater & Sweats</p>
+                <p>Party Wear</p>
+                <p>Innerwear & Thermals</p>
+                <p>Nightwear & Loungewear</p>
+                <p>Value Packs</p>
+            </div>
+            <div style="background-color: azure;">
+                <p class="nav-color">Girls Clothing</p>
+                <p>Dresses</p>
+                <p>Tops</p>
+                <p>Tshirts</p>
+                <p>Clothing Sets</p>
+                <p>Lehenga choli</p>
+                <p>Kurta Sets</p>
+                <p>Party wear</p>
+                <p>Dungarees & Jumpsuits</p>
+                <p>Skirts & shorts</p>
+                <p>Tights & Leggings</p>
+                <p>Jeans, Trousers & Capris</p>
+                <p>Jacket, Sweater & Sweats</p>
+                <p>Innerwear & Thermals</p>
+                <p>Nightwear & Loungewear</p>
+                <p>Value Packs</p>
+            </div>
+            <div style="background-color: white;">
+                <p class="nav-color">Footwear</p>
+                <p>Casual Shoes</p>
+                <p>Flipflops</p>
+                <p>Sports Shoes</p>
+                <p>Flats</p>
+                <p>Sandals</p>
+                <p>Heels</p>
+                <p>School Shoes</p>
+                <p>Socks</p>
+                <hr>
+                <p class="nav-color">Toys</p>
+                <p>Learning & Development</p>
+                <p>Activity Toys</p>
+                <p>Soft Toys</p>
+                <p>Action Figure / Play set</p>
+            </div>
+            <div style="background-color: azure;">
+                <p class="nav-color">Infants</p>
+                <p>Bodysuits</p>
+                <p>Rompers & Sleepsuits</p>
+                <p>Clothing Sets</p>
+                <p>Tshirts & Tops</p>
+                <p>Dresses</p>
+                <p>Bottom wear</p>
+                <p>Winter Wear</p>
+                <p>Innerwear & Sleepwear</p>
+                <p>Infant Care</p>
+                <hr>
+                <p class="nav-color">Home & Bath</p>
+                <br>
+                <p class="nav-color">Personal Care</p>
+            </div>
+            <div style="background-color: white;">
+                <p class="nav-color">Kids Accessories</p>
+                <p>Bags & Backpacks</p>
+                <p>Watches</p>
+                <p>Jewellery & Hair accessory</p>
+                <p>Sunglasses</p>
+                <p>Masks & Protective Gears</p>
+                <p>Caps & Hats</p>
+                <hr>
+                <p class="nav-color">Brands</p>
+                <p>H&M</p>
+                <p>Max Kids</p>
+                <p>Pantaloons</p>
+                <p>United Colors Of Benetton</p>
+                <p>YK</p>
+                <p>U.S. Polo Assn. Kids</p>
+                <p>Mothercare</p>
+                <p>HRX</p>
+            </div>
+        </div>
     </div>
     <div id="profile_drop">
         <p>Hello there</p>
@@ -252,6 +256,12 @@
 </body>
 </html>
 <script>
+    window.addEventListener("scroll",function()
+    {
+        let scroll=document.querySelector("#drop")
+        scroll.style.position="sticky"
+        console.log("ddd")
+    })
     //for navbar major categories
     let div=document.querySelector("#drop")
     let cat=document.querySelectorAll("#nav_cat>div")
