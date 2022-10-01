@@ -12,14 +12,19 @@
         }
         #pp-base{
             display: flex;
+            justify-content: space-between;
         }
         #pp-filter-section{
-            border: 1px solid;
+            border: 1px solid gainsboro;
             width:15%;
+            padding: 5px;
+        }
+        hr{
+          border: 1px solid gainsboro;
         }
         #pp-product-section{
-            border: 1px solid;
-            width:85%;
+            border: 0px solid;
+            width:83%;
         }
         #pp-filter-section>div:nth-child(1){
             display: flex;
@@ -37,8 +42,9 @@
         #pp-card{
             display: grid;
             grid-template-columns: repeat(5,1fr);
-            gap: 10px;
+            gap: 20px;
             margin: 10px;
+            line-height: 7px;
         }
         #pp img{
             width: 100%;
@@ -71,12 +77,319 @@
           border: 1px solid;
           cursor: pointer;
         }
+        .pp-integers{
+          display: flex;
+          gap: 7px;
+          align-items: center;
+        }
     </style>
+
+    <!--Navbar css-->
+    <style>
+      /* navbar css */
+      #nav{
+          display: flex;
+          border: 0px solid;
+          justify-content:space-between;
+          align-items: center;
+          padding:0px 4%;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          position: sticky;
+          top:0px;
+          background-color: white;
+      }    
+      #nav>div{
+          border: 0px solid;
+      }
+      #nav>div:nth-child(1)>img{
+          width: 100%;
+          cursor: pointer;
+      }
+      #nav>div:nth-child(1){
+          width: 8%;
+      }
+      #nav>div:nth-child(2){
+          width: 45%;
+          display: flex;
+          justify-content: space-between;
+      }
+      #nav>div:nth-last-child(1){
+          width:11%;
+          display: flex;
+          justify-content: space-between;
+          cursor: pointer;
+          align-items: center;
+          border: 0px solid;
+      }
+      #nav>div:nth-last-child(1)>div{
+          border: 0px solid;
+          text-align: center;
+          display: grid;
+      }
+
+      #nav>div:nth-child(3)>input{
+          padding: 10px;
+          width:100%;
+          background-color: azure;
+      }
+
+      #nav_search{
+          display:flex;
+          width:25%;
+          align-items: center;
+          background-color: azure;
+      }
+      #nav_cat>div:hover{
+          cursor: pointer;
+      }
+      /* #nav>div:nth-last-child(1):hover{
+          cursor:pointer;
+      } */
+      #drop{  
+          border:0px solid;
+          height: 400px;
+          width:72%;
+          background-color: green;
+          position:absolute;
+          top:65px;
+          left:200px;
+          display:none;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+      }
+      #drop>div>div{
+          width: 20%;
+          padding: 12px;
+          line-height: 7px;
+          
+      }
+      #drop>div>div>p:hover{
+          cursor: pointer;
+          font-weight: bolder;
+      }
+      #profile_drop{
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          border:1px solid;
+          line-height: 50%;
+          width:20%;
+          position:absolute;
+          top:70px;
+          left:79%;
+          display: none;
+          padding-left: 10px;
+          background-color: white;
+      }
+      #profile_drop>p:hover{
+          font-weight: bolder;
+          cursor: pointer;
+      }
+      .nav-color{
+          color: red;
+          font-weight: bolder;
+      }
+    </style>
+
+    <!--Footer css-->
+    <style>
+      #lp{
+          background-color:aliceblue;
+          padding-top: 30px;
+      }
+      #lp_footer{
+          width: 80%;
+          border: 0px solid;
+          margin: auto;
+          background-color:;
+      }
+      #foot_social{
+          display: flex;
+      }
+      /* #lp_footer img{
+          width: 100%;
+      } */
+      #foot_social>div{
+          display: flex;
+      }
+      .image{
+          display: flex;
+      }
+      #foot_social>div:nth-child(1){
+          border: 0px solid red;
+          width: 30%;
+      }
+      #foot_social>div:nth-child(2){
+          border: 0px solid green;
+          width: 70%;
+      }
+      #foot_social>div:nth-child(2)>div:nth-child(1){
+          border: 0px solid;
+          width: 50%;
+      }
+      #app>img{
+          width: 40%;
+      }
+
+      #foot_popular>div{
+          display: flex;
+          justify-content: space-between;
+      }
+
+      #foot_address{
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+      }
+    </style>
+
+<script src="https://kit.fontawesome.com/81ff3434ff.js" crossorigin="anonymous">
+document.querySelector("#nav_cat>div").addEventListener("hover")
+</script>
 
 <script src="https://kit.fontawesome.com/81ff3434ff.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
+  <!-- navbar html -->
+  <div id="nav">
+    <div onclick="location.href='http://127.0.0.1:5500/day-2/lp.html'">
+        <img src="data:image/jpeg;base64,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" alt="">
+    </div>
+    <div id="nav_cat">
+        <div><h3>MEN</h3></div>
+        <div><h3>WOMEN</h3></div>
+        <div><h3>KIDS</h3></div>
+        <div><h3>HOME & LIVING</h3></div>
+        <div><h3>BEAUTY</h3></div>
+    </div>
+    <div id="nav_search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input style="border: none;" type="search" placeholder="Search for products, brands and more">
+    </div>
+    <div>
+        <div id="nav_profile">
+            <i class="fa-solid fa-user"></i>
+            <p>Profile</p>
+        </div>
+        <div onclick="location.href='http://127.0.0.1:5500/day-4/wishlist-page.html'">
+            <i class="fa-solid fa-heart"></i>
+            <p>Wishlist</p>
+        </div>
+        <div onclick="location.href='http://127.0.0.1:5500/day-4/bag-page.html'">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <p>Bag</p>
+        </div>
+    </div>
+</div>
+<div id="drop">
+    <div style="display: flex;">
+        <div style="background-color: white;">
+            <p class="nav-color">Boys Clothing</p>
+            <p>T-Shirts</p>
+            <p>Shirts</p>
+            <p>Shorts</p>
+            <p>Jeans</p>
+            <p>Trousers</p>
+            <p>Clothing Sets</p>
+            <p>Ethnic Wear</p>
+            <p>Track Pants & Pyjamas</p>
+            <p>Jacket, Sweater & Sweats</p>
+            <p>Party Wear</p>
+            <p>Innerwear & Thermals</p>
+            <p>Nightwear & Loungewear</p>
+            <p>Value Packs</p>
+        </div>
+        <div style="background-color: azure;">
+            <p class="nav-color">Girls Clothing</p>
+            <p>Dresses</p>
+            <p>Tops</p>
+            <p>Tshirts</p>
+            <p>Clothing Sets</p>
+            <p>Lehenga choli</p>
+            <p>Kurta Sets</p>
+            <p>Party wear</p>
+            <p>Dungarees & Jumpsuits</p>
+            <p>Skirts & shorts</p>
+            <p>Tights & Leggings</p>
+            <p>Jeans, Trousers & Capris</p>
+            <p>Jacket, Sweater & Sweats</p>
+            <p>Innerwear & Thermals</p>
+            <p>Nightwear & Loungewear</p>
+            <p>Value Packs</p>
+        </div>
+        <div style="background-color: white;">
+            <p class="nav-color">Footwear</p>
+            <p>Casual Shoes</p>
+            <p>Flipflops</p>
+            <p>Sports Shoes</p>
+            <p>Flats</p>
+            <p>Sandals</p>
+            <p>Heels</p>
+            <p>School Shoes</p>
+            <p>Socks</p>
+            <hr>
+            <p class="nav-color">Toys</p>
+            <p>Learning & Development</p>
+            <p>Activity Toys</p>
+            <p>Soft Toys</p>
+            <p>Action Figure / Play set</p>
+        </div>
+        <div style="background-color: azure;">
+            <p class="nav-color">Infants</p>
+            <p>Bodysuits</p>
+            <p>Rompers & Sleepsuits</p>
+            <p>Clothing Sets</p>
+            <p>Tshirts & Tops</p>
+            <p>Dresses</p>
+            <p>Bottom wear</p>
+            <p>Winter Wear</p>
+            <p>Innerwear & Sleepwear</p>
+            <p>Infant Care</p>
+            <hr>
+            <p class="nav-color">Home & Bath</p>
+            <br>
+            <p class="nav-color">Personal Care</p>
+        </div>
+        <div style="background-color: white;">
+            <p class="nav-color">Kids Accessories</p>
+            <p>Bags & Backpacks</p>
+            <p>Watches</p>
+            <p>Jewellery & Hair accessory</p>
+            <p>Sunglasses</p>
+            <p>Masks & Protective Gears</p>
+            <p>Caps & Hats</p>
+            <hr>
+            <p class="nav-color">Brands</p>
+            <p>H&M</p>
+            <p>Max Kids</p>
+            <p>Pantaloons</p>
+            <p>United Colors Of Benetton</p>
+            <p>YK</p>
+            <p>U.S. Polo Assn. Kids</p>
+            <p>Mothercare</p>
+            <p>HRX</p>
+        </div>
+    </div>
+</div>
+<div id="profile_drop">
+    <p>Hello there</p>
+    <p>9776467878</p>
+    <hr>
+    <p>Orders</p>
+    <p>Wishlist</p>
+    <p>Gift Cards</p>
+    <p>Contact Us</p>
+    <p>Myntra Insider</p>
+    <hr>
+    <p>Orders</p>
+    <p>Wishlist</p>
+    <p>Gift Cards</p>
+    <p>Contact Us</p>
+    <p>Myntra Insider</p>
+    <hr>
+    <p>Edit profile</p>
+    <p>Logout</p>
+</div>
+
+<!--main-page html-->
     <div id="pp">
         <p>Home /<b> Kid Ethnic</b></p>
         <p><b>Kid Ethnic - </b><span id="pp-quantity"></span> items</p>
@@ -84,57 +397,54 @@
             <div id="pp-filter-section">
                 <div>
                     <h4>FILTERS</h4>
-                    <H5>CLEAR ALL</H5>
+                    <H5 style="color: red; cursor: pointer;" id="clearall">CLEAR ALL</H5>
                 </div>
+              
                 <div>  
                     <input type="radio" name="radio" id="boy">Boys 
                     <br>                
                     <input type="radio" name="radio" id="girl">Girls
                 </div>
+                <hr>
                 <div>
                     <div>
                         <h4>CATEGORIES</h4>                  
                     </div>
                     <div>
-                        <input type="checkbox" name="" id=""> Kurta Sets
+                        <input type="checkbox" name="" id="kurta"> Kurta
                         <br>
-                        <input type="checkbox" name="" id=""> Kurtas
+                        <input type="checkbox" name="" id="lehenga"> Lehenga Choli
                         <br>
-                        <input type="checkbox" name="" id=""> Clothing
+                        <input type="checkbox" name="" id="clothing"> Clothing sets
                         <br>
-                        <input type="checkbox" name="" id=""> Sherwani
+                        <input type="checkbox" name="" id="sherwani"> Sherwani
                         <br>
-                        <input type="checkbox" name="" id=""> Dhotis
-                        <br>
-                        <input type="checkbox" name="" id=""> Rakhi
-                        <br>
-                        <input type="checkbox" name="" id=""> Shirts
-                        <br>
-                        <input type="checkbox" name="" id=""> Nehru Jackets
+                        <input type="checkbox" name="" id="flats"> Flats
+                        <br>                                          
+                        <input type="checkbox" name="" id="nehru"> Nehru Jackets
                     </div>
                 </div>
+                <hr>
                 <div>
                     <div>
                         <h4>BRAND</h4>                  
                     </div>
                     <div>
-                        <input type="checkbox" name="" id=""> Kurta Sets
+                        <input type="checkbox" name="" id="puma"> Puma
                         <br>
-                        <input type="checkbox" name="" id=""> Kurtas
+                        <input type="checkbox" name="" id="hrx"> HRX
                         <br>
-                        <input type="checkbox" name="" id=""> Clothing
+                        <input type="checkbox" name="" id="roadster"> Roadster
                         <br>
-                        <input type="checkbox" name="" id=""> Sherwani
+                        <input type="checkbox" name="" id="pantaloons"> Pantaloons
                         <br>
-                        <input type="checkbox" name="" id=""> Dhotis
+                        <input type="checkbox" name="" id="vastramay"> Vastramay
                         <br>
-                        <input type="checkbox" name="" id=""> Rakhi
-                        <br>
-                        <input type="checkbox" name="" id=""> Shirts
-                        <br>
-                        <input type="checkbox" name="" id=""> Nehru Jackets
+                        <input type="checkbox" name="" id="uspolo"> U.S. Poli Ass.
+                  
                     </div>
                 </div>
+                <hr>
                 <div>
                     <div>
                         <h4>PRICE</h4>                  
@@ -142,62 +452,60 @@
                     <div>
                         <input type="checkbox" name="" id="onethreesix"> Rs.136 to Rs.2145
                         <br>
-                        <input type="checkbox" name="" id=""> Kurtas
+                        <input type="checkbox" name="" id="twoonefourfive"> Rs.2145 to Rs.4154
                         <br>
-                        <input type="checkbox" name="" id=""> Clothing
+                        <input type="checkbox" name="" id="fouronefivefour"> Rs.4154 to Rs.6163
                         <br>
-                        <input type="checkbox" name="" id=""> Sherwani
+                        <input type="checkbox" name="" id="sixonesixthree"> Rs.6163 to above
                     </div>
                 </div>
+                <hr>
                 <div>
                     <div>
                         <h4>COLOR</h4>                  
                     </div>
                     <div>
-                        <input type="checkbox" name="" id=""> Kurta Sets
+                        <input type="checkbox" name="" id="cpink"> Pink
                         <br>
-                        <input type="checkbox" name="" id=""> Kurtas
+                        <input type="checkbox" name="" id="cblue"> Blue
                         <br>
-                        <input type="checkbox" name="" id=""> Clothing
+                        <input type="checkbox" name="" id="cyellow"> Yellow
                         <br>
-                        <input type="checkbox" name="" id=""> Sherwani
+                        <input type="checkbox" name="" id="cgreen"> Green
                         <br>
-                        <input type="checkbox" name="" id=""> Dhotis
+                        <input type="checkbox" name="" id="cred"> Red
                         <br>
-                        <input type="checkbox" name="" id=""> Rakhi
+                        <input type="checkbox" name="" id="cnavyblue"> Navy Blue
                         <br>
-                        <input type="checkbox" name="" id=""> Shirts
-                        <br>
-                        <input type="checkbox" name="" id=""> Nehru Jackets
+                        <input type="checkbox" name="" id="corange"> Orange
+                       
                     </div>
                 </div>
+                <hr>
                 <div>
-                    <div>
+                <div>
                         <h4>DISCOUNT RANGE</h4>                  
-                    </div>
-                    <div>
-                        <input type="radio" name="discount" id=""> Kurta Sets
+                </div>
+                <div>
+                        <input type="radio" name="discount" id="two"> 20% and above
                         <br>
-                        <input type="radio" name="discount" id=""> Kurtas
+                        <input type="radio" name="discount" id="three"> 30% and above
                         <br>
-                        <input type="radio" name="discount" id=""> Clothing
+                        <input type="radio" name="discount" id="four"> 40% and above
                         <br>
-                        <input type="radio" name="discount" id=""> Sherwani
+                        <input type="radio" name="discount" id="five"> 50% and above
                         <br>
-                        <input type="radio" name="discount" id=""> Dhotis
+                        <input type="radio" name="discount" id="six"> 60% and above
                         <br>
-                        <input type="radio" name="discount" id=""> Rakhi
-                        <br>
-                        <input type="radio" name="discount" id=""> Shirts
-                        <br>
-                        <input type="radio" name="discount" id=""> Nehru Jackets
-                    </div>
+                        <input type="radio" name="discount" id="seven"> 70% and above
+                        
+                </div>
                 </div>
             </div> 
             <div id="pp-product-section">
                 <div class="pp-flex-space_between">
                     <div>
-                        <select name="" id="">
+                        <!-- <select name="" id="">
                             <option value="">Age</option>
                         </select>
                         <select name="" id="">
@@ -208,7 +516,7 @@
                         </select>
                         <select name="" id="">
                             <option value="">Size</option>
-                        </select>
+                        </select> -->
                     </div>
                     <div class="pp-flex-space_between" id="pp-sortbar">
                        <div id="sort-drop">Sort by: <span id="pp-sorting"></span></div>
@@ -216,6 +524,7 @@
                     </div>
                 </div>   
                 <div id="pp-card">
+
                 </div>        
             </div>         
         </div>
@@ -229,303 +538,574 @@
         </div> -->
 
     </div>
+
+<!--footer html-->
+     <div id="lp">
+      <div id="lp_footer">
+          <div id="foot_social">
+              <div>
+                  <div>
+                      <h5>ONLINE SHOPPING</h5>
+                      <br>
+                      <p>Men</p>
+                      <p>Women</p>
+                      <p>Kids</p>
+                      <p>Home & Living</p>
+                      <p>Beauty</p>
+                      <p>Gift Cards</p>
+                      <p>Myntra Insider</p>
+                      <br>
+                      <h5>USEFUL LINKS</h5>
+                      <br>
+                      <p>Blog</p>
+                      <p>Careers</p>
+                      <p>Site Map</p>
+                      <p>Corporate Information</p>
+                      <p>Whitehat</p>
+                  </div>
+                  <div>
+                      <h5>CUSTOMER POLICIES</h5>
+                      <br>
+                      <p>Contact Us</p>
+                      <p>FAQ</p>
+                      <p>T&C</p>
+                      <p>Terms Of Use</p>
+                      <p>Track Orders</p>
+                      <p>Shipping</p>
+                      <p>Cancellation</p>
+                      <p>Returns</p>
+                      <p>Privacy policy</p>
+                      <p>Grievance Officer</p>
+                  </div>
+              </div>
+              <div>
+                  <div>
+                      <h5>EXPERIENCE MYNTRA APP ON MOBILE</h5>
+                      <div id="app" class="image">
+                          <img src="https://constant.myntassets.com/web/assets/img/80cc455a-92d2-4b5c-a038-7da0d92af33f1539674178924-google_play.png" alt="">
+                          <img src="https://constant.myntassets.com/web/assets/img/bc5e11ad-0250-420a-ac71-115a57ca35d51539674178941-apple_store.png" alt="">
+                      </div>
+                      <br>
+                      <h5>KEEP IN TOUCH</h5>
+                      <div class="image">
+                          <img src="https://constant.myntassets.com/web/assets/img/d2bec182-bef5-4fab-ade0-034d21ec82e31574604275433-fb.png" alt="">
+                          <img src="https://constant.myntassets.com/web/assets/img/f10bc513-c5a4-490c-9a9c-eb7a3cc8252b1574604275383-twitter.png" alt="">
+                          <img src="https://constant.myntassets.com/web/assets/img/a7e3c86e-566a-44a6-a733-179389dd87111574604275355-yt.png" alt="">
+                          <img src="https://constant.myntassets.com/web/assets/img/b4fcca19-5fc1-4199-93ca-4cae3210ef7f1574604275408-insta.png" alt="">
+                      </div>    
+                  </div>
+                  <div>
+                      <div class="image">
+                          <img src="https://constant.myntassets.com/web/assets/img/6c3306ca-1efa-4a27-8769-3b69d16948741574602902452-original.png" alt="">
+                          <p><b>100% ORIGINAL</b> guarantee for all products at myntra.com</p>
+                      </div>
+                      <div class="image">
+                          <img src="https://constant.myntassets.com/web/assets/img/ef05d6ec-950a-4d01-bbfa-e8e5af80ffe31574602902427-30days.png" alt="">
+                          <p><b>Return within 30days</b> of receiving your order</p>
+                      </div>               
+                  </div>
+              </div>          
+          </div>
+          <hr>
+          <div id="foot_popular">
+              <h5>POPULAR SEARCHES</h5>
+              <p>Makeup  Dresses For Girls  T-Shirts  Sandals  Headphones  Babydolls  Blazers For Men  Handbags  Ladies Watches  Bags  Sport Shoes  Reebok Shoes  Puma Shoes  Boxers  Wallets  Tops  Earrings  Fastrack Watches  Kurtis  Nike  Smart Watches  Titan Watches  Designer Blouse  Gowns  Rings  Cricket Shoes  Forever 21  Eye Makeup  Photo Frames  Punjabi Suits  Bikini  Myntra Fashion Show  Lipstick  Saree  Watches  Dresses  Lehenga  Nike Shoes  Goggles  Bras  Suit  Chinos  Shoes  Adidas Shoes  Woodland Shoes  Jewellery  Designers Sarees</p>
+              <div>
+                  <p>In case of any concern, Contact Us</p>
+                  <p>© 2022 www.myntra.com. All rights reserved.</p>
+              </div>
+          </div>
+          <hr>
+          <div id="foot_address">          
+              <div>
+                  <h5>Registered Office Address</h5>
+                  <p>Buildings Alyssa,<br>
+                      Begonia and Clover situated in Embassy Tech Village,<br>
+                      Outer Ring Road,<br>
+                      Devarabeesanahalli Village,<br>
+                      Varthur Hobli,<br>
+                      Bengaluru – 560103, India
+                  </p>
+              </div>
+              <div>
+                  <p>CIN: U72300KA2007PTC041799 <br>
+                      Telephone: +91-80-61561999</p>
+              </div>
+          </div>
+          <hr>
+          <div id="foot_product_desc">
+              <p>
+                 <b>ONLINE SHOPPING MADE EASY AT MYNTRA</b> <br>
+                  If you would like to experience the best of online shopping for men, women and kids in India, you are at the right place. Myntra is the ultimate destination for fashion and lifestyle, being host to a wide array of merchandise including clothing, footwear, accessories, jewellery, personal care products and more. It is time to redefine your style statement with our treasure-trove of trendy items. Our online store brings you the latest in designer products straight out of fashion houses. You can shop online at Myntra from the comfort of your home and get your favourites delivered right to your doorstep. <br>
+                  <br>
+                  <b>BEST ONLINE SHOPPING SITE IN INDIA FOR FASHION</b> <br>
+                  Be it clothing, footwear or accessories, Myntra offers you the ideal combination of fashion and functionality for men, women and kids. You will realise that the sky is the limit when it comes to the types of outfits that you can purchase for different occasions.
+              </p>
+              <ol>
+                  <li> Smart men’s clothing - At Myntra you will find myriad options in smart formal shirts and trousers, cool T-shirts and jeans, or kurta and pyjama combinations for men. Wear your attitude with printed T-shirts. Create the back-to-campus vibe with varsity T-shirts and distressed jeans. Be it gingham, buffalo, or window-pane style, checked shirts are unbeatably smart. Team them up with chinos, cuffed jeans or cropped trousers for a smart casual look. Opt for a stylish layered look with biker jackets. Head out in cloudy weather with courage in water-resistant jackets. Browse through our innerwear section to find supportive garments which would keep you confident in any outfit.
+                  </li>
+                  <li> Trendy women’s clothing - Online shopping for women at Myntra is a mood-elevating experience. Look hip and stay comfortable with chinos and printed shorts this summer. Look hot on your date dressed in a little black dress, or opt for red dresses for a sassy vibe. Striped dresses and T-shirts represent the classic spirit of nautical fashion. Choose your favourites from among Bardot, off-shoulder, shirt-style, blouson, embroidered and peplum tops, to name a few. Team them up with skinny-fit jeans, skirts or palazzos. Kurtis and jeans make the perfect fusion-wear combination for the cool urbanite. Our grand sarees and lehenga-choli selections are perfect to make an impression at big social events such as weddings. Our salwar-kameez sets, kurtas and Patiala suits make comfortable options for regular wear.
+                  </li>
+                  <li> Fashionable footwear - While clothes maketh the man, the type of footwear you wear reflects your personality. We bring you an exhaustive lineup of options in casual shoes for men, such as sneakers and loafers. Make a power statement at work dressed in brogues and oxfords. Practice for your marathon with running shoes for men and women. Choose shoes for individual games such as tennis, football, basketball, and the like. Or step into the casual style and comfort offered by sandals, sliders, and flip-flops. Explore our lineup of fashionable footwear for ladies, including pumps, heeled boots, wedge-heels, and pencil-heels. Or enjoy the best of comfort and style with embellished and metallic flats.
+                  </li>
+                  <li> Stylish accessories - Myntra is one of the best online shopping sites for classy accessories that perfectly complement your outfits. You can select smart analogue or digital watches and match them up with belts and ties. Pick up spacious bags, backpacks, and wallets to store your essentials in style. Whether you prefer minimal jewellery or grand and sparkling pieces, our online jewellery collection offers you many impressive options.
+                  </li>
+                  <li> Fun and frolic - Online shopping for kids at Myntra is a complete joy. Your little princess is going to love the wide variety of pretty dresses, ballerina shoes, headbands and clips. Delight your son by picking up sports shoes, superhero T-shirts, football jerseys and much more from our online store. Check out our lineup of toys with which you can create memories to cherish.
+                  </li>
+                  <li> Beauty begins here - You can also refresh, rejuvenate and reveal beautiful skin with personal care, beauty and grooming products from Myntra. Our soaps, shower gels, skin care creams, lotions and other ayurvedic products are specially formulated to reduce the effect of aging and offer the ideal cleansing experience. Keep your scalp clean and your hair uber-stylish with shampoos and hair care products. Choose makeup to enhance your natural beauty.
+                  </li>
+              </ol>
+              <p>Myntra is one of the best online shopping sites in India which could help transform your living spaces completely. Add colour and personality to your bedrooms with bed linen and curtains. Use smart tableware to impress your guest. Wall decor, clocks, photo frames and artificial plants are sure to breathe life into any corner of your home.</p>
+          </div>
+      </div>
+      </div>
     
 </body>
 </html>
+<!--main page script-->
 <script>
+  document.querySelector("#clearall").addEventListener("click",function()
+  {
+    window.location.reload();
+  })
+
     let pp_card=document.querySelector("#pp-card")
      
     var mensData = [
     {
       image_url:
         "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK RUNNING ROADMAP SHOES",
+      brand: "PUMA" ,
+      discount: 55 ,
+      color: "pink",
+      category:"lehenga",
+      name: "Trendy Floral Pink Lengha",
       price: "1170",
-      gender: "boys",
+      gender: "girls",
       strikedoffprice: 2599,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK SWIM ARUBA FLIP SLIPPERS ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/18339608/2022/5/19/41d0d6d3-6df3-4dfa-95dc-e23dabfc964e1652971951617WhiteWorldGirlsGreenLehengaCholi1.jpg",
+      brand: "HRX" ,
+      discount: 31 ,
+      color: "navy blue",
+      category:"lehenga",
+      name: "Ready to Wear Lehenga Blouse ",
       price: 699,
-      gender: "boys",
+      gender: "girls",
       strikedoffprice: 999,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19847878/2022/9/8/5974fa4e-65af-47ac-b903-4cb8eb166c121662621088176ATUNGirlsYellowPinkEmbroideredReadytoWearLehengaBlouseWithDu1.jpg",
+      brand: "PUMA" ,
+      discount:  55 ,
+      color: "yellow",
+      category:"lehenga",
+      name: " Ready to Wear Lehenga Blouse",
       price: 945,
-      gender: "boys",
+      gender: "girls",
       strikedoffprice: 2099,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK SWIM AVENGER FLIP LP SLIPPERS",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16278478/2022/9/27/bcaa30e7-41e8-4a83-8035-4c4dad3bdf821664251171194-House-of-Pataudi-Boys-Olive-Green-Solid-Pure-Cotton-Kurta-73-12.jpg",
+      brand: "PUMA" ,
+      discount: 51  ,
+      color: "navy blue",
+      category:"kurta",
+      name: "Boys Ethnic Cotton Kurta",
       price: 399,
       gender: "boys",
       strikedoffprice: 799,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK RUNNING TEMPO SHOES ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16804532/2022/1/13/365ae0e5-18c9-45ff-aa45-aac031ecde691642069750957VASTRAMAYBoysMustardYellowFloralPrintedThreadWorkKurta1.jpg",
+      brand: "PUMA" ,
+      discount:  55 ,
+      color: "yellow",
+      category:"kurta",
+      name: "Boys Ethnic Motifs Kurta",
       price: 1620,
       gender: "boys",
       strikedoffprice: 3599,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: " MEN'S REEBOK RUNNING ASTRO BOOSTER SHOES ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/18455716/2022/9/26/e481ac89-43f9-4ee9-9cb8-2dc7cfe5c36f1664194427856-House-of-Pataudi-Boys-Blue-Thread-Work-Kurta-478166419442776-7.jpg",
+      brand: "PUMA" ,
+      discount: 55  ,
+      color: "blue",
+      category:"kurta",
+      name: "Boys Ethnic Motifs Kurta",
       price: 1440,
       gender: "boys",
       strikedoffprice: 3199,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: " MEN'S TRAINING WORKOUT READY ELITAGE PANTS ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/14699760/2022/3/4/a487e254-17d2-42c6-ba6a-c3aae141fc9d1646394746440-House-of-Pataudi-Boys-Red-Checked--Embroidered-Pure-Cotton-K-1.jpg",
+      brand:"HRX"  ,
+      discount: 38  ,
+      color: "red",
+      category:"kurta",
+      name: "Boys Ethnic Motifs Kurta",
       price: 1999,
       gender: "boys",
       strikedoffprice: 3199,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK TRAINING  POLO T-SHIRTS TEE  ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/18455704/2022/9/26/06f47aac-5053-49b7-bd72-a6fc91f949b81664194384521-House-of-Pataudi-Boys-Teal-Blue--White-Ethnic-Motifs-Printed-7.jpg",
+      brand:"HRX"  ,
+      discount:  31 ,
+      color: "navy blue",
+      category:"kurta",
+      name: "Boys Ethnic Motifs Kurta",
       price: 769,
       gender: "boys",
       strikedoffprice: 1099,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK TRAINING WORKOUT  TEE  ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/18455716/2022/9/26/e481ac89-43f9-4ee9-9cb8-2dc7cfe5c36f1664194427856-House-of-Pataudi-Boys-Blue-Thread-Work-Kurta-478166419442776-7.jpg",
+      brand:"HRX"  ,
+      discount: 10 ,
+      color: "blue",
+      category:"kurta",
+      name: "Boys Ethnic Motifs Kurta",
       price: 1299,
       gender: "boys",
       strikedoffprice: 1440,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK SUPER SOFT FLIP SLIPPERS",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15691294/2021/9/30/4e2b45b8-7506-4585-8fe6-3459d8eb47391632981468864-Vastramay-Boys-Multicoloured-Embroidered-Kediyu-345163298146-1.jpg",
+      brand:"HRX"  ,
+      discount: 31  ,
+      color: "orange",
+      category:"Nehru Jacket",
+      name: "Boys Printed Nehru Jacket",
       price: 699,
       gender: "boys",
       strikedoffprice: 999,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK RUNNING RUN SHOES  ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15001756/2021/10/11/4809b431-5e72-473f-a213-ae9a6437aa251633928930774VASTRAMAYBoysPinkGreenFloralDigitalPrintedSlim-FitNehruJacke1.jpg",
+      brand:"HRX"  ,
+      discount: 55 ,
+      color: "pink",
+      category:"Nehru Jacket",
+      name: "Boys Printed Nehru Jacket",
       price: 1620,
       gender: "boys",
       strikedoffprice: 3599,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK RUNNING GENESIS RUNNER SHOES  ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15977198/2022/3/4/3870aabf-5a99-4e5d-bfd6-ce4cbee5476a1646394785216-House-of-Pataudi-Boys-Blue--Gold-Toned-Printed-Pure-Cotton-N-1.jpg",
+      brand:"HRX"  ,
+      discount: 55 ,
+      color: "blue",
+      category:"Nehru Jacket",
+      name: "Boys Printed Satin Nehru Jacket",
       price: 1620,
       gender: "boys",
       strikedoffprice: 3599,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK SWIM RUSSLE FLIP SLIPPERS  ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15691294/2021/9/30/4e2b45b8-7506-4585-8fe6-3459d8eb47391632981468864-Vastramay-Boys-Multicoloured-Embroidered-Kediyu-345163298146-1.jpg",
+      brand:"Roadster"  ,
+      discount: 41  ,
+      color: "orange",
+      category:"Nehru Jacket",
+      name: "Boys Printed Satin Nehru Jacket",
       price: 599,
       gender: "boys",
       strikedoffprice: 999,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: " MEN'S REEBOK RUNNING TREND RUNNER SHOES",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15001756/2021/10/11/4809b431-5e72-473f-a213-ae9a6437aa251633928930774VASTRAMAYBoysPinkGreenFloralDigitalPrintedSlim-FitNehruJacke1.jpg",
+      brand:"Roadster"  ,
+      discount: 55  ,
+      color: "pink",
+      category:"Nehru Jacket",
+      name: "Boys Printed Nehru Jacket",
       price: 1575,
       gender: "boys",
       strikedoffprice: 3499,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "UNISEX REEBOK RUNNING ZIG KINETICA II SHOES  ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15977198/2022/3/4/3870aabf-5a99-4e5d-bfd6-ce4cbee5476a1646394785216-House-of-Pataudi-Boys-Blue--Gold-Toned-Printed-Pure-Cotton-N-1.jpg",
+      brand:"Roadster"  ,
+      discount:  17 ,
+      color: "blue",
+      category:"Nehru Jacket",
+      name: "Boys Cotton Nehru Jacket",
       price: 9999,
       gender: "boys",
       strikedoffprice: 12000,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: " MEN'S REEBOK TRAINING BAS POLO TEE ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/7/7/9509718d-df80-4eb4-949a-34424dd6e6e91625662451785-1.jpg",
+      brand:"Roadster"  ,
+      discount:  41  ,
+      color: "green",
+      category:"Sherwani",
+      name: "Boys Printed Sherwani Set",
       price: 779,
       gender: "boys",
       strikedoffprice: 1299,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK TRAINING FOUNDATION  PANTS  ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2020/12/4/adf2edec-9b86-4908-bf42-2360b75717041607078252797-1.jpg",
+      brand:"Roadster"  ,
+      discount: 41  ,
+      color: "navy blue",
+      category:"Sherwani",
+      name: "Boys Printed Sherwani Set",
       price: 1019,
       gender: "boys",
       strikedoffprice: 1699,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK TRAINING FOUNDATION PANTS  ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17760576/2022/4/5/e40482d2-ad12-4cbc-9fd0-a204bcabd77d1649138610866KID1BoysYellowPrintedSherwaniSet1.jpg",
+      brand:"Roadster"  ,
+      discount:  41 ,
+      color: "orange",
+      category:"Sherwani",
+      name: "Boys Printed Sherwani Set",
       price: 1019,
       gender: "boys",
       strikedoffprice: 1699,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: " MEN'S REEBOK RUNNING TREND SHOES",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/7/7/9509718d-df80-4eb4-949a-34424dd6e6e91625662451785-1.jpg",
+      brand:"pantaloons"  ,
+      discount: 55  ,
+      color: "green",
+      category:"Sherwani",
+      name: "Boys Printed Sherwani Set",
       price: 1575,
       gender: "boys",
       strikedoffprice: 3499,
     },
     {
       image_url:
-        " https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "  MEN'S REEBOK RUNNING ZTAUR RUN SHOES ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2020/12/4/adf2edec-9b86-4908-bf42-2360b75717041607078252797-1.jpg ",
+      brand:"pantaloons"  ,
+      discount: 31  ,
+      color: "navy blue",
+      category:"Sherwani",
+      name: "Boys Printed Sherwani Set",
       price: 3499,
       gender: "boys",
       strikedoffprice: 4999,
     },
     {
       image_url:
-        " https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg ",
-      name: "MEN'S REEBOK SWIM ULTRA FLIP SLIPPERS   ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17760576/2022/4/5/e40482d2-ad12-4cbc-9fd0-a204bcabd77d1649138610866KID1BoysYellowPrintedSherwaniSet1.jpg  ",
+      brand:"pantaloons"  ,
+      discount:  51 ,
+      color: "orange",
+      category:"Sherwani",
+      name: "Boys Printed Sherwani Set",
       price: 749,
       gender: "boys",
       strikedoffprice: 1499,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "  MEN'S REEBOK SWIM FLEX CONNECT SANDALS ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/18011758/2022/4/24/590b5be6-a5b4-44f9-aeb7-b3c8c04c24881650747120902BitiyabyBhamaGirlsPinkLehengaCholi1.jpg",
+      brand:"pantaloons"  ,
+      discount: 51 ,
+      color: "red",
+      category:"lehenga",
+      name: "Ready to Wear Lehenga Choli",
       price: 1149,
-      gender: "boys",
+      gender: "girls",
       strikedoffprice: 2299,
     },
     {
       image_url:
-        " https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: " MEN'S REEBOK RUNNING GENESIS RUNNER SHOE  ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15643270/2021/9/27/0554cb86-ff96-4184-a876-00e9c129415c1632753132382SKYHEIGHTS1.jpg ",
+      brand:"pantaloons"  ,
+      discount: 55  ,
+      color: "pink",
+      category:"lehenga",
+      name: "Ready to Wear Lehenga Choli",
       price: 1620,
-      gender: "boys",
+      gender: "girls",
       strikedoffprice: 3599,
     },
     {
       image_url:
-        " https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: " MEN'S REEBOK TRAINING RUNNER SHORTS  ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17977850/2022/4/21/0ed7d6c4-e76b-49db-a170-cc72d85cfd5c1650557165066pspeachesGirlsYellowLehengaCholi1.jpg ",
+      brand:"pantaloons"  ,
+      discount: 41  ,
+      color: "blue",
+      category:"lehenga",
+      name: "Ready to Wear Lehenga Choli",
       price: 779,
-      gender: "boys",
+      gender: "girls",
       strikedoffprice: 1299,
     },
     {
       image_url:
-        " https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: " MEN REEBOK CLASSICS TRACKSUIT HOODIE  ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/18011758/2022/4/24/590b5be6-a5b4-44f9-aeb7-b3c8c04c24881650747120902BitiyabyBhamaGirlsPinkLehengaCholi1.jpg ",
+      brand: "VASTRAMAY" ,
+      discount: 31  ,
+      color: "red",
+      category:"lehenga",
+      name: "Ready to Wear Lehenga Choli",
       price: 3499,
-      gender: "boys",
+      gender: "girls",
       strikedoffprice: 4999,
     },
     {
       image_url:
-        " https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK CLASSIC TRACKSUIT GOLF HOODIE   ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15643270/2021/9/27/0554cb86-ff96-4184-a876-00e9c129415c1632753132382SKYHEIGHTS1.jpg ",
+      brand: "VASTRAMAY" ,
+      discount:  31 ,
+      color: "pink",
+      category:"lehenga",
+      name: "Ready to Wear Lehenga Choli",
       price: 3499,
-      gender: "boys",
+      gender: "girls",
       strikedoffprice: 4999,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: " UNISEX REEBOK TRAINING ACTIVE  BAG ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17977850/2022/4/21/0ed7d6c4-e76b-49db-a170-cc72d85cfd5c1650557165066pspeachesGirlsYellowLehengaCholi1.jpg",
+      brand: "VASTRAMAY" ,
+      discount: 51  ,
+      color: "blue",
+      category:"lehenga",
+      name: "Ready to Wear Lehenga Choli",
       price: 1399,
-      gender: "boys",
+      gender: "girls",
       strikedoffprice: 2799,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: " MEN'S REEBOK RUNNING TREND RUNNER SHOES",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17551032/2022/7/11/d5d725d3-468d-46a5-a5fb-ca99d8a424bd1657530936552-Sangria-Girls-Green--Pink-Pure-Cotton-Floral-Printed-Kurta-W-1.jpg",
+      brand: "VASTRAMAY" ,
+      discount: 55  ,
+      color: "blue",
+      category:"Clothing sets",
+      name: "Girls Cotton Kurta & Trousers",
       price: 1575,
-      gender: "boys",
+      gender: "girls",
       strikedoffprice: 3499,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "UNISEX REEBOK CLASSICS  BASKETBALL SHOES",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17551036/2022/7/11/f663897f-1755-44f5-9b68-522df28501621657530973414-Sangria-Girls-Lime-Green--Blue-Embroidered-Kurta--Solid-Pala-1.jpg",
+      brand: "VASTRAMAY" ,
+      discount:  31 ,
+      color: "green",
+      category:"Clothing sets",
+      name: "Girls Cotton Kurta & Trousers",
       price: 3919,
-      gender: "boys",
+      gender: "girls",
       strikedoffprice: 5599,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK RUNNING RUN FUSION  SHOES",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/20122872/2022/9/22/37d49487-438c-4caa-90e0-b8c54eb9e16c1663811798688BownBeeGirlsBandhaniPrintCottonTopwithDhotiSetsOrange1.jpg",
+      brand: "VASTRAMAY" ,
+      discount:  55 ,
+      color: "orange",
+      category:"Clothing sets",
+      name: "Girls Cotton Kurta & Trousers",
       price: 1620,
       gender: "girls",
       strikedoffprice: 3599,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK RUNNING QUICK DRIFTER SHOES",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17551032/2022/7/11/d5d725d3-468d-46a5-a5fb-ca99d8a424bd1657530936552-Sangria-Girls-Green--Pink-Pure-Cotton-Floral-Printed-Kurta-W-1.jpg",
+      brand: "US POLO ASSN." ,
+      discount:  55 ,
+      color: "blue",
+      category:"Clothing sets",
+      name: "Girls Cotton Kurta & Trousers",
       price: 1620,
       gender: "girls",
       strikedoffprice: 3599,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK DYNAMIC ZIGZAG SHOES",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17551036/2022/7/11/f663897f-1755-44f5-9b68-522df28501621657530973414-Sangria-Girls-Lime-Green--Blue-Embroidered-Kurta--Solid-Pala-1.jpg",
+      brand: "US POLO ASSN." ,
+      discount: 25  ,
+      color: "green",
+      category:"Clothing sets",
+      name: "Girls Cotton Kurta & Trousers",
       price: 7599,
       gender: "girls",
       strikedoffprice: 9999,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK SWIM SUPERSOFT FLIP SLIPPERS",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/20122872/2022/9/22/37d49487-438c-4caa-90e0-b8c54eb9e16c1663811798688BownBeeGirlsBandhaniPrintCottonTopwithDhotiSetsOrange1.jpg",
+      brand: "US POLO ASSN." ,
+      discount:  31 ,
+      color: "orange",
+      category:"Clothing sets",
+      name: "Girls Cotton Kurta & Trousers",
       price: 909,
       gender: "girls",
       strikedoffprice: 1299,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK TRAINING ACTIVE BASIC POLO TEE",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15143736/2021/9/3/4891cfe4-32b1-4f5e-9a10-4d6e6e9a53391630670178125-Sangria-Girls-Navy-Blue--Off-White-Woven-Design-Ballerinas-w-1.jpg",
+      brand: "US POLO ASSN." ,
+      discount:  41 ,
+      color: "navy blue",
+      category:"Flats",
+      name: "Girls Mules",
       price: 779,
       gender: "girls",
       strikedoffprice: 1299,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK TRAINING ACTIVE MOVE TEE ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19651544/2022/8/25/540f98e5-6ffa-4bfd-8fc6-ab5ef04794a61661426104453DChicaGirlsRedEthnicBallerinasFlats1.jpg",
+      brand: "US POLO ASSN." ,
+      discount:  31 ,
+      color: "red",
+      category:"Flats",
+      name: "Girls Mules",
       price: 1749,
       gender: "girls",
       strikedoffprice: 2499,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK FITNESS TRAINING  SWEATSHIRT",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19651556/2022/8/26/8c41cb76-2e42-4e77-b195-eff9a2fd53091661490347663DChicaGirlsFuchsiaPrintedEthnicBallerinasFlats1.jpg",
+      brand: "US POLO ASSN." ,
+      discount:  41 ,
+      color: "pink",
+      category:"Flats",
+      name: "Girls Mules",
       price: 1079,
       gender: "girls",
       strikedoffprice: 1799,
     },
   ];
-    
+  
     function show(mensData)
     {
         mensData.forEach(function(el,i)
@@ -540,12 +1120,23 @@
           hovr.style.backgroundColor="red"
           send_to_wishlist(el,i)
         })
-        let name=document.createElement("h4")
+        let brand=document.createElement("h3")
+        brand.innerText=el.brand
+        let name=document.createElement("p")
         name.innerText=el.name
+        let minidiv=document.createElement("div")
+        minidiv.setAttribute("class","pp-integers")
         let price=document.createElement("h4")
         price.innerText=el.price
+        let sof=document.createElement("p")
+        sof.innerText=el.strikedoffprice
+        sof.style.textDecoration="line-through"
+        let discount=document.createElement("p")
+        discount.innerText="("+Math.ceil(100-((el.price/el.strikedoffprice)*100))+"% off)" 
+        discount.style.color="red"
+        minidiv.append(price,sof,discount)
         let div=document.createElement("div")
-        div.append(image,hovr,name,price)
+        div.append(image,hovr,brand,name,minidiv)
         pp_card.append(div)
         })
         document.querySelector("#pp-quantity").innerText=mensData.length
@@ -594,7 +1185,8 @@
         down_menu.style.display="none"
      })
 
-     //sort by popularity
+     //----------sort by popularity-------------
+
      let popularity=document.querySelector("#pp-down-popular")
      popularity.addEventListener("click",function()
      {
@@ -603,293 +1195,437 @@
     {
       image_url:
         "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK RUNNING ROADMAP SHOES",
+      brand: "PUMA" ,
+      discount: 55 ,
+      color: "pink",
+      category:"lehenga",
+      name: "Trendy Floral Pink Lengha",
       price: "1170",
-      gender: "boys",
+      gender: "girls",
       strikedoffprice: 2599,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK SWIM ARUBA FLIP SLIPPERS ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/18339608/2022/5/19/41d0d6d3-6df3-4dfa-95dc-e23dabfc964e1652971951617WhiteWorldGirlsGreenLehengaCholi1.jpg",
+      brand: "HRX" ,
+      discount: 31 ,
+      color: "navy blue",
+      category:"lehenga",
+      name: "Ready to Wear Lehenga Blouse ",
       price: 699,
-      gender: "boys",
+      gender: "girls",
       strikedoffprice: 999,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19847878/2022/9/8/5974fa4e-65af-47ac-b903-4cb8eb166c121662621088176ATUNGirlsYellowPinkEmbroideredReadytoWearLehengaBlouseWithDu1.jpg",
+      brand: "PUMA" ,
+      discount:  55 ,
+      color: "yellow",
+      category:"lehenga",
+      name: " Ready to Wear Lehenga Blouse",
       price: 945,
-      gender: "boys",
+      gender: "girls",
       strikedoffprice: 2099,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK SWIM AVENGER FLIP LP SLIPPERS",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16278478/2022/9/27/bcaa30e7-41e8-4a83-8035-4c4dad3bdf821664251171194-House-of-Pataudi-Boys-Olive-Green-Solid-Pure-Cotton-Kurta-73-12.jpg",
+      brand: "PUMA" ,
+      discount: 51  ,
+      color: "navy blue",
+      category:"kurta",
+      name: "Boys Ethnic Cotton Kurta",
       price: 399,
       gender: "boys",
       strikedoffprice: 799,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK RUNNING TEMPO SHOES ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16804532/2022/1/13/365ae0e5-18c9-45ff-aa45-aac031ecde691642069750957VASTRAMAYBoysMustardYellowFloralPrintedThreadWorkKurta1.jpg",
+      brand: "PUMA" ,
+      discount:  55 ,
+      color: "yellow",
+      category:"kurta",
+      name: "Boys Ethnic Motifs Kurta",
       price: 1620,
       gender: "boys",
       strikedoffprice: 3599,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: " MEN'S REEBOK RUNNING ASTRO BOOSTER SHOES ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/18455716/2022/9/26/e481ac89-43f9-4ee9-9cb8-2dc7cfe5c36f1664194427856-House-of-Pataudi-Boys-Blue-Thread-Work-Kurta-478166419442776-7.jpg",
+      brand: "PUMA" ,
+      discount: 55  ,
+      color: "blue",
+      category:"kurta",
+      name: "Boys Ethnic Motifs Kurta",
       price: 1440,
       gender: "boys",
       strikedoffprice: 3199,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: " MEN'S TRAINING WORKOUT READY ELITAGE PANTS ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/14699760/2022/3/4/a487e254-17d2-42c6-ba6a-c3aae141fc9d1646394746440-House-of-Pataudi-Boys-Red-Checked--Embroidered-Pure-Cotton-K-1.jpg",
+      brand:"HRX"  ,
+      discount: 38  ,
+      color: "red",
+      category:"kurta",
+      name: "Boys Ethnic Motifs Kurta",
       price: 1999,
       gender: "boys",
       strikedoffprice: 3199,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK TRAINING  POLO T-SHIRTS TEE  ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/18455704/2022/9/26/06f47aac-5053-49b7-bd72-a6fc91f949b81664194384521-House-of-Pataudi-Boys-Teal-Blue--White-Ethnic-Motifs-Printed-7.jpg",
+      brand:"HRX"  ,
+      discount:  31 ,
+      color: "navy blue",
+      category:"kurta",
+      name: "Boys Ethnic Motifs Kurta",
       price: 769,
       gender: "boys",
       strikedoffprice: 1099,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK TRAINING WORKOUT  TEE  ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/18455716/2022/9/26/e481ac89-43f9-4ee9-9cb8-2dc7cfe5c36f1664194427856-House-of-Pataudi-Boys-Blue-Thread-Work-Kurta-478166419442776-7.jpg",
+      brand:"HRX"  ,
+      discount: 10 ,
+      color: "blue",
+      category:"kurta",
+      name: "Boys Ethnic Motifs Kurta",
       price: 1299,
       gender: "boys",
       strikedoffprice: 1440,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK SUPER SOFT FLIP SLIPPERS",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15691294/2021/9/30/4e2b45b8-7506-4585-8fe6-3459d8eb47391632981468864-Vastramay-Boys-Multicoloured-Embroidered-Kediyu-345163298146-1.jpg",
+      brand:"HRX"  ,
+      discount: 31  ,
+      color: "orange",
+      category:"Nehru Jacket",
+      name: "Boys Printed Nehru Jacket",
       price: 699,
       gender: "boys",
       strikedoffprice: 999,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK RUNNING RUN SHOES  ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15001756/2021/10/11/4809b431-5e72-473f-a213-ae9a6437aa251633928930774VASTRAMAYBoysPinkGreenFloralDigitalPrintedSlim-FitNehruJacke1.jpg",
+      brand:"HRX"  ,
+      discount: 55 ,
+      color: "pink",
+      category:"Nehru Jacket",
+      name: "Boys Printed Nehru Jacket",
       price: 1620,
       gender: "boys",
       strikedoffprice: 3599,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK RUNNING GENESIS RUNNER SHOES  ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15977198/2022/3/4/3870aabf-5a99-4e5d-bfd6-ce4cbee5476a1646394785216-House-of-Pataudi-Boys-Blue--Gold-Toned-Printed-Pure-Cotton-N-1.jpg",
+      brand:"HRX"  ,
+      discount: 55 ,
+      color: "blue",
+      category:"Nehru Jacket",
+      name: "Boys Printed Satin Nehru Jacket",
       price: 1620,
       gender: "boys",
       strikedoffprice: 3599,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK SWIM RUSSLE FLIP SLIPPERS  ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15691294/2021/9/30/4e2b45b8-7506-4585-8fe6-3459d8eb47391632981468864-Vastramay-Boys-Multicoloured-Embroidered-Kediyu-345163298146-1.jpg",
+      brand:"Roadster"  ,
+      discount: 41  ,
+      color: "orange",
+      category:"Nehru Jacket",
+      name: "Boys Printed Satin Nehru Jacket",
       price: 599,
       gender: "boys",
       strikedoffprice: 999,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: " MEN'S REEBOK RUNNING TREND RUNNER SHOES",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15001756/2021/10/11/4809b431-5e72-473f-a213-ae9a6437aa251633928930774VASTRAMAYBoysPinkGreenFloralDigitalPrintedSlim-FitNehruJacke1.jpg",
+      brand:"Roadster"  ,
+      discount: 55  ,
+      color: "pink",
+      category:"Nehru Jacket",
+      name: "Boys Printed Nehru Jacket",
       price: 1575,
       gender: "boys",
       strikedoffprice: 3499,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "UNISEX REEBOK RUNNING ZIG KINETICA II SHOES  ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15977198/2022/3/4/3870aabf-5a99-4e5d-bfd6-ce4cbee5476a1646394785216-House-of-Pataudi-Boys-Blue--Gold-Toned-Printed-Pure-Cotton-N-1.jpg",
+      brand:"Roadster"  ,
+      discount:  17 ,
+      color: "blue",
+      category:"Nehru Jacket",
+      name: "Boys Cotton Nehru Jacket",
       price: 9999,
       gender: "boys",
       strikedoffprice: 12000,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: " MEN'S REEBOK TRAINING BAS POLO TEE ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/7/7/9509718d-df80-4eb4-949a-34424dd6e6e91625662451785-1.jpg",
+      brand:"Roadster"  ,
+      discount:  41  ,
+      color: "green",
+      category:"Sherwani",
+      name: "Boys Printed Sherwani Set",
       price: 779,
       gender: "boys",
       strikedoffprice: 1299,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK TRAINING FOUNDATION  PANTS  ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2020/12/4/adf2edec-9b86-4908-bf42-2360b75717041607078252797-1.jpg",
+      brand:"Roadster"  ,
+      discount: 41  ,
+      color: "navy blue",
+      category:"Sherwani",
+      name: "Boys Printed Sherwani Set",
       price: 1019,
       gender: "boys",
       strikedoffprice: 1699,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK TRAINING FOUNDATION PANTS  ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17760576/2022/4/5/e40482d2-ad12-4cbc-9fd0-a204bcabd77d1649138610866KID1BoysYellowPrintedSherwaniSet1.jpg",
+      brand:"Roadster"  ,
+      discount:  41 ,
+      color: "orange",
+      category:"Sherwani",
+      name: "Boys Printed Sherwani Set",
       price: 1019,
       gender: "boys",
       strikedoffprice: 1699,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: " MEN'S REEBOK RUNNING TREND SHOES",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/7/7/9509718d-df80-4eb4-949a-34424dd6e6e91625662451785-1.jpg",
+      brand:"pantaloons"  ,
+      discount: 55  ,
+      color: "green",
+      category:"Sherwani",
+      name: "Boys Printed Sherwani Set",
       price: 1575,
       gender: "boys",
       strikedoffprice: 3499,
     },
     {
       image_url:
-        " https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "  MEN'S REEBOK RUNNING ZTAUR RUN SHOES ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2020/12/4/adf2edec-9b86-4908-bf42-2360b75717041607078252797-1.jpg ",
+      brand:"pantaloons"  ,
+      discount: 31  ,
+      color: "navy blue",
+      category:"Sherwani",
+      name: "Boys Printed Sherwani Set",
       price: 3499,
       gender: "boys",
       strikedoffprice: 4999,
     },
     {
       image_url:
-        " https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg ",
-      name: "MEN'S REEBOK SWIM ULTRA FLIP SLIPPERS   ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17760576/2022/4/5/e40482d2-ad12-4cbc-9fd0-a204bcabd77d1649138610866KID1BoysYellowPrintedSherwaniSet1.jpg  ",
+      brand:"pantaloons"  ,
+      discount:  51 ,
+      color: "orange",
+      category:"Sherwani",
+      name: "Boys Printed Sherwani Set",
       price: 749,
       gender: "boys",
       strikedoffprice: 1499,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "  MEN'S REEBOK SWIM FLEX CONNECT SANDALS ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/18011758/2022/4/24/590b5be6-a5b4-44f9-aeb7-b3c8c04c24881650747120902BitiyabyBhamaGirlsPinkLehengaCholi1.jpg",
+      brand:"pantaloons"  ,
+      discount: 51 ,
+      color: "red",
+      category:"lehenga",
+      name: "Ready to Wear Lehenga Choli",
       price: 1149,
-      gender: "boys",
+      gender: "girls",
       strikedoffprice: 2299,
     },
     {
       image_url:
-        " https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: " MEN'S REEBOK RUNNING GENESIS RUNNER SHOE  ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15643270/2021/9/27/0554cb86-ff96-4184-a876-00e9c129415c1632753132382SKYHEIGHTS1.jpg ",
+      brand:"pantaloons"  ,
+      discount: 55  ,
+      color: "pink",
+      category:"lehenga",
+      name: "Ready to Wear Lehenga Choli",
       price: 1620,
-      gender: "boys",
+      gender: "girls",
       strikedoffprice: 3599,
     },
     {
       image_url:
-        " https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: " MEN'S REEBOK TRAINING RUNNER SHORTS  ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17977850/2022/4/21/0ed7d6c4-e76b-49db-a170-cc72d85cfd5c1650557165066pspeachesGirlsYellowLehengaCholi1.jpg ",
+      brand:"pantaloons"  ,
+      discount: 41  ,
+      color: "blue",
+      category:"lehenga",
+      name: "Ready to Wear Lehenga Choli",
       price: 779,
-      gender: "boys",
+      gender: "girls",
       strikedoffprice: 1299,
     },
     {
       image_url:
-        " https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: " MEN REEBOK CLASSICS TRACKSUIT HOODIE  ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/18011758/2022/4/24/590b5be6-a5b4-44f9-aeb7-b3c8c04c24881650747120902BitiyabyBhamaGirlsPinkLehengaCholi1.jpg ",
+      brand: "VASTRAMAY" ,
+      discount: 31  ,
+      color: "red",
+      category:"lehenga",
+      name: "Ready to Wear Lehenga Choli",
       price: 3499,
-      gender: "boys",
+      gender: "girls",
       strikedoffprice: 4999,
     },
     {
       image_url:
-        " https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK CLASSIC TRACKSUIT GOLF HOODIE   ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15643270/2021/9/27/0554cb86-ff96-4184-a876-00e9c129415c1632753132382SKYHEIGHTS1.jpg ",
+      brand: "VASTRAMAY" ,
+      discount:  31 ,
+      color: "pink",
+      category:"lehenga",
+      name: "Ready to Wear Lehenga Choli",
       price: 3499,
-      gender: "boys",
+      gender: "girls",
       strikedoffprice: 4999,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: " UNISEX REEBOK TRAINING ACTIVE  BAG ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17977850/2022/4/21/0ed7d6c4-e76b-49db-a170-cc72d85cfd5c1650557165066pspeachesGirlsYellowLehengaCholi1.jpg",
+      brand: "VASTRAMAY" ,
+      discount: 51  ,
+      color: "blue",
+      category:"lehenga",
+      name: "Ready to Wear Lehenga Choli",
       price: 1399,
-      gender: "boys",
+      gender: "girls",
       strikedoffprice: 2799,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: " MEN'S REEBOK RUNNING TREND RUNNER SHOES",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17551032/2022/7/11/d5d725d3-468d-46a5-a5fb-ca99d8a424bd1657530936552-Sangria-Girls-Green--Pink-Pure-Cotton-Floral-Printed-Kurta-W-1.jpg",
+      brand: "VASTRAMAY" ,
+      discount: 55  ,
+      color: "blue",
+      category:"Clothing sets",
+      name: "Girls Cotton Kurta & Trousers",
       price: 1575,
-      gender: "boys",
+      gender: "girls",
       strikedoffprice: 3499,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "UNISEX REEBOK CLASSICS  BASKETBALL SHOES",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17551036/2022/7/11/f663897f-1755-44f5-9b68-522df28501621657530973414-Sangria-Girls-Lime-Green--Blue-Embroidered-Kurta--Solid-Pala-1.jpg",
+      brand: "VASTRAMAY" ,
+      discount:  31 ,
+      color: "green",
+      category:"Clothing sets",
+      name: "Girls Cotton Kurta & Trousers",
       price: 3919,
-      gender: "boys",
+      gender: "girls",
       strikedoffprice: 5599,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK RUNNING RUN FUSION  SHOES",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/20122872/2022/9/22/37d49487-438c-4caa-90e0-b8c54eb9e16c1663811798688BownBeeGirlsBandhaniPrintCottonTopwithDhotiSetsOrange1.jpg",
+      brand: "VASTRAMAY" ,
+      discount:  55 ,
+      color: "orange",
+      category:"Clothing sets",
+      name: "Girls Cotton Kurta & Trousers",
       price: 1620,
       gender: "girls",
       strikedoffprice: 3599,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK RUNNING QUICK DRIFTER SHOES",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17551032/2022/7/11/d5d725d3-468d-46a5-a5fb-ca99d8a424bd1657530936552-Sangria-Girls-Green--Pink-Pure-Cotton-Floral-Printed-Kurta-W-1.jpg",
+      brand: "US POLO ASSN." ,
+      discount:  55 ,
+      color: "blue",
+      category:"Clothing sets",
+      name: "Girls Cotton Kurta & Trousers",
       price: 1620,
       gender: "girls",
       strikedoffprice: 3599,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK DYNAMIC ZIGZAG SHOES",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17551036/2022/7/11/f663897f-1755-44f5-9b68-522df28501621657530973414-Sangria-Girls-Lime-Green--Blue-Embroidered-Kurta--Solid-Pala-1.jpg",
+      brand: "US POLO ASSN." ,
+      discount: 25  ,
+      color: "green",
+      category:"Clothing sets",
+      name: "Girls Cotton Kurta & Trousers",
       price: 7599,
       gender: "girls",
       strikedoffprice: 9999,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK SWIM SUPERSOFT FLIP SLIPPERS",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/20122872/2022/9/22/37d49487-438c-4caa-90e0-b8c54eb9e16c1663811798688BownBeeGirlsBandhaniPrintCottonTopwithDhotiSetsOrange1.jpg",
+      brand: "US POLO ASSN." ,
+      discount:  31 ,
+      color: "orange",
+      category:"Clothing sets",
+      name: "Girls Cotton Kurta & Trousers",
       price: 909,
       gender: "girls",
       strikedoffprice: 1299,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK TRAINING ACTIVE BASIC POLO TEE",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15143736/2021/9/3/4891cfe4-32b1-4f5e-9a10-4d6e6e9a53391630670178125-Sangria-Girls-Navy-Blue--Off-White-Woven-Design-Ballerinas-w-1.jpg",
+      brand: "US POLO ASSN." ,
+      discount:  41 ,
+      color: "navy blue",
+      category:"Flats",
+      name: "Girls Mules",
       price: 779,
       gender: "girls",
       strikedoffprice: 1299,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK TRAINING ACTIVE MOVE TEE ",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19651544/2022/8/25/540f98e5-6ffa-4bfd-8fc6-ab5ef04794a61661426104453DChicaGirlsRedEthnicBallerinasFlats1.jpg",
+      brand: "US POLO ASSN." ,
+      discount:  31 ,
+      color: "red",
+      category:"Flats",
+      name: "Girls Mules",
       price: 1749,
       gender: "girls",
       strikedoffprice: 2499,
     },
     {
       image_url:
-        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17907638/2022/4/18/70efaac0-458c-4bcf-a8d0-4ad556a81b1e1650266604400pspeachesGirlsMagentaLehengaCholi1.jpg",
-      name: "MEN'S REEBOK FITNESS TRAINING  SWEATSHIRT",
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19651556/2022/8/26/8c41cb76-2e42-4e77-b195-eff9a2fd53091661490347663DChicaGirlsFuchsiaPrintedEthnicBallerinasFlats1.jpg",
+      brand: "US POLO ASSN." ,
+      discount:  41 ,
+      color: "pink",
+      category:"Flats",
+      name: "Girls Mules",
       price: 1079,
       gender: "girls",
       strikedoffprice: 1799,
     },
   ];
-    
+  
         show(mensData)
      })
 
@@ -915,16 +1651,71 @@
         show(res)
      })
 
-     //filter by price range
+     //--------------filter by price range-----------------
+
      let onethreesix=document.querySelector("#onethreesix")
      onethreesix.addEventListener("change",function(el)
      {
+      pp_card.innerHTML=''
         if(el.target.checked)
         {
-            pp_card.innerHTML=""
             let res=mensData.filter(function(el)
             {
                 return el.price>=136 && el.price<=2145
+            })
+            show(res)
+        }
+        else
+        {
+            show(mensData)
+        }     
+     })
+
+     let twoonefourfive=document.querySelector("#twoonefourfive")
+     twoonefourfive.addEventListener("change",function(el)
+     {
+      pp_card.innerHTML=''
+        if(el.target.checked)
+        {
+            let res=mensData.filter(function(el)
+            {
+                return el.price>=2145 && el.price<4154
+            })
+            show(res)
+        }
+        else
+        {
+            show(mensData)
+        }     
+     })
+
+     let fouronefivefour=document.querySelector("#fouronefivefour")
+     fouronefivefour.addEventListener("change",function(el)
+     {
+      pp_card.innerHTML=''
+        if(el.target.checked)
+        {
+            let res=mensData.filter(function(el)
+            {
+                return el.price>=4154 && el.price<6163
+            })
+            show(res)
+        }
+        else
+        {
+            show(mensData)
+        }     
+     })
+
+     let sixonesixthree=document.querySelector("#sixonesixthree")
+     sixonesixthree.addEventListener("change",function(el)
+     {
+      pp_card.innerHTML=''
+        if(el.target.checked)
+        {
+            let res=mensData.filter(function(el)
+            {
+                return el.price>=6163
             })
             show(res)
         }
@@ -958,11 +1749,510 @@
 
     // })
 
+    //--------------FILTER BY COLOR---------------
+
+    let cpink=document.querySelector("#cpink")
+     cpink.addEventListener("change",function(el)
+     {
+      pp_card.innerHTML=""
+      
+        if(el.target.checked)
+        {
+            let res=mensData.filter(function(el)
+            {
+                return el.color=="pink"
+            })
+            show(res)
+        }
+        else
+        {
+            show(mensData)
+        }     
+     })
+
+     let cblue=document.querySelector("#cblue")
+     cblue.addEventListener("change",function(el)
+     {
+      pp_card.innerHTML=""
+      
+        if(el.target.checked)
+        {
+            let res=mensData.filter(function(el)
+            {
+                return el.color=="blue"
+            })
+            show(res)
+        }
+        else
+        {
+            show(mensData)
+        }     
+     })
+
+     let cyellow=document.querySelector("#cyellow")
+     cyellow.addEventListener("change",function(el)
+     {
+      pp_card.innerHTML=""
+      
+        if(el.target.checked)
+        {
+            let res=mensData.filter(function(el)
+            {
+                return el.color=="yellow"
+            })
+            show(res)
+        }
+        else
+        {
+            show(mensData)
+        }     
+     })
+
+     let cgreen=document.querySelector("#cgreen")
+     cgreen.addEventListener("change",function(el)
+     {
+      pp_card.innerHTML=""
+      
+        if(el.target.checked)
+        {
+            let res=mensData.filter(function(el)
+            {
+                return el.color=="green"
+            })
+            show(res)
+        }
+        else
+        {
+            show(mensData)
+        }     
+     })
+
+     let cred=document.querySelector("#cred")
+     cred.addEventListener("change",function(el)
+     {
+      pp_card.innerHTML=""
+      
+        if(el.target.checked)
+        {
+            let res=mensData.filter(function(el)
+            {
+                return el.color=="red"
+            })
+            show(res)
+        }
+        else
+        {
+            show(mensData)
+        }     
+     })
+
+     let cnavyblue=document.querySelector("#cnavyblue")
+     cnavyblue.addEventListener("change",function(el)
+     {
+      pp_card.innerHTML=""
+      
+        if(el.target.checked)
+        {
+            let res=mensData.filter(function(el)
+            {
+                return el.color=="navy blue"
+            })
+            show(res)
+        }
+        else
+        {
+            show(mensData)
+        }     
+     })
+
+     let corange=document.querySelector("#corange")
+     corange.addEventListener("change",function(el)
+     {
+      pp_card.innerHTML=""
+      
+        if(el.target.checked)
+        {
+            let res=mensData.filter(function(el)
+            {
+                return el.color=="orange"
+            })
+            show(res)
+        }
+        else
+        {
+            show(mensData)
+        }     
+     })
+
+     //-------------FILTER BY BRAND---------------
+     let puma=document.querySelector("#puma")
+     puma.addEventListener("change",function(el)
+     {
+      pp_card.innerHTML=""
+      
+        if(el.target.checked)
+        {
+            let res=mensData.filter(function(el)
+            {
+                return el.brand=="PUMA"
+            })
+            show(res)
+        }
+        else
+        {
+            show(mensData)
+        }     
+     })
+
+     let hrx=document.querySelector("#hrx")
+     hrx.addEventListener("change",function(el)
+     {
+      pp_card.innerHTML=""
+      
+        if(el.target.checked)
+        {
+            let res=mensData.filter(function(el)
+            {
+                return el.brand=="HRX"
+            })
+            show(res)
+        }
+        else
+        {
+            show(mensData)
+        }     
+     })
+
+     let roadster=document.querySelector("#roadster")
+     roadster.addEventListener("change",function(el)
+     {
+      pp_card.innerHTML=""
+      
+        if(el.target.checked)
+        {
+            let res=mensData.filter(function(el)
+            {
+                return el.brand=="Roadster"
+            })
+            show(res)
+        }
+        else
+        {
+            show(mensData)
+        }     
+     })
+
+     let pantaloons=document.querySelector("#pantaloons")
+     pantaloons.addEventListener("change",function(el)
+     {
+      pp_card.innerHTML=""
+      
+        if(el.target.checked)
+        {
+            let res=mensData.filter(function(el)
+            {
+                return el.brand=="pantaloons"
+            })
+            show(res)
+        }
+        else
+        {
+            show(mensData)
+        }     
+     })
+
+     let vastramay=document.querySelector("#vastramay")
+     vastramay.addEventListener("change",function(el)
+     {
+      pp_card.innerHTML=""
+      
+        if(el.target.checked)
+        {
+            let res=mensData.filter(function(el)
+            {
+                return el.brand=="VASTRAMAY"
+            })
+            show(res)
+        }
+        else
+        {
+            show(mensData)
+        }     
+     })
+
+     let uspolo=document.querySelector("#uspolo")
+     uspolo.addEventListener("change",function(el)
+     {
+      pp_card.innerHTML=""
+      
+        if(el.target.checked)
+        {
+            let res=mensData.filter(function(el)
+            {
+                return el.brand=="US POLO ASSN."
+            })
+            show(res)
+        }
+        else
+        {
+            show(mensData)
+        }     
+     })
+
+      //-------------FILTER BY DISCOUNT---------------------
+      document.querySelector("#two").addEventListener("click",function()
+    {
+        pp_card.innerHTML=""
+        let res=mensData.filter(function(el)
+        {
+            return el.discount>=20
+        })
+        show(res)
+    })
+
+    document.querySelector("#seven").addEventListener("click",function()
+    {
+        pp_card.innerHTML=""
+        let res=mensData.filter(function(el)
+        {
+            return el.discount>=70
+        })
+        show(res)
+    })
+
+    document.querySelector("#three").addEventListener("click",function()
+    {
+        pp_card.innerHTML=""
+        let res=mensData.filter(function(el)
+        {
+            return el.discount>=30
+        })
+        show(res)
+    })
+
+    document.querySelector("#four").addEventListener("click",function()
+    {
+        pp_card.innerHTML=""
+        let res=mensData.filter(function(el)
+        {
+            return el.discount>=40
+        })
+        show(res)
+    })
+
+    document.querySelector("#five").addEventListener("click",function()
+    {
+        pp_card.innerHTML=""
+        let res=mensData.filter(function(el)
+        {
+            return el.discount>=50
+        })
+        show(res)
+    })
+
+    document.querySelector("#six").addEventListener("click",function()
+    {
+        pp_card.innerHTML=""
+        let res=mensData.filter(function(el)
+        {
+            return el.discount>=60
+        })
+        show(res)
+    })
+
+    //-------------------FILTER BY CATEGORIES-------------------
+    let kurta=document.querySelector("#kurta")
+     kurta.addEventListener("change",function(el)
+     {
+      pp_card.innerHTML=""
+      
+        if(el.target.checked)
+        {
+            let res=mensData.filter(function(el)
+            {
+                return el.category=="kurta"
+            })
+            show(res)
+        }
+        else
+        {
+            show(mensData)
+        }     
+     })
+
+     let lehenga=document.querySelector("#lehenga")
+     lehenga.addEventListener("change",function(el)
+     {
+      pp_card.innerHTML=""
+      
+        if(el.target.checked)
+        {
+            let res=mensData.filter(function(el)
+            {
+                return el.category=="lehenga"
+            })
+            show(res)
+        }
+        else
+        {
+            show(mensData)
+        }     
+     })
+
+     let clothing=document.querySelector("#clothing")
+     clothing.addEventListener("change",function(el)
+     {
+      pp_card.innerHTML=""
+      
+        if(el.target.checked)
+        {
+            let res=mensData.filter(function(el)
+            {
+                return el.category=="Clothing sets"
+            })
+            show(res)
+        }
+        else
+        {
+            show(mensData)
+        }     
+     })
+
+     let sherwani=document.querySelector("#sherwani")
+     sherwani.addEventListener("change",function(el)
+     {
+      pp_card.innerHTML=""
+      
+        if(el.target.checked)
+        {
+            let res=mensData.filter(function(el)
+            {
+                return el.category=="Sherwani"
+            })
+            show(res)
+        }
+        else
+        {
+            show(mensData)
+        }     
+     })
+
+     let flats=document.querySelector("#flats")
+     flats.addEventListener("change",function(el)
+     {
+      pp_card.innerHTML=""
+      
+        if(el.target.checked)
+        {
+            let res=mensData.filter(function(el)
+            {
+                return el.category=="Flats"
+            })
+            show(res)
+        }
+        else
+        {
+            show(mensData)
+        }     
+     })
+
+     let nehru=document.querySelector("#nehru")
+     nehru.addEventListener("change",function(el)
+     {
+      pp_card.innerHTML=""
+      
+        if(el.target.checked)
+        {
+            let res=mensData.filter(function(el)
+            {
+                return el.category=="Nehru Jacket"
+            })
+            show(res)
+        }
+        else
+        {
+            show(mensData)
+        }     
+     })
+
     let ar=JSON.parse(localStorage.getItem("wish-list"))||[];
    function send_to_wishlist(el,i)
    {
     ar.push(el)
     localStorage.setItem("wish-list",JSON.stringify(ar))
    }
+
+</script>
+
+<!--Navbar script-->
+<script>
+  let redirect=document.querySelectorAll("#drop>div>div>p")
+  redirect.forEach(function(el)
+  {
+      el.addEventListener("click",function()
+      {
+          location.href="http://127.0.0.1:5500/day-3/product_page.html"
+      })
+  })
+
+  window.addEventListener("scroll",function()
+  {
+      let scroll=document.querySelector("#drop")
+      scroll.style.position="sticky"
+      console.log("ddd")
+  })
+  //for navbar major categories
+  let div=document.querySelector("#drop")
+  let cat=document.querySelectorAll("#nav_cat>div")
+  cat.forEach(function(el)
+  {
+      el.addEventListener("mouseover",function()
+      {
+      el.style.borderBottom="solid red"
+      div.style.display="block"
+      })
+      el.addEventListener("mouseout",function()
+      {
+      el.style.borderBottom="none";
+      div.style.display="none"       
+      })
+  })
+   
+  div.addEventListener("mouseover",function()
+  {
+      div.style.display="block"
+  })
+  div.addEventListener("mouseout",function()
+  {
+      div.style.display="none"
+  })
+  
+  //for profile tab
+  let nav_profile=document.querySelector("#nav_profile")
+  let profile_drop=document.querySelector("#profile_drop")
+  nav_profile.addEventListener("mouseover",function()
+  {
+      profile_drop.style.display="block"
+      nav_profile.style.borderBottom="solid red"
+
+  })
+  nav_profile.addEventListener("mouseout",function()
+  {
+      profile_drop.display="none"
+      nav_profile.style.borderBottom="none"
+      
+  })
+  
+  profile_drop.addEventListener("mouseover",function()
+  {
+      profile_drop.style.display="block"
+      nav_profile.style.borderBottom="solid red"
+
+  })
+  profile_drop.addEventListener("mouseout",function()
+  {
+      profile_drop.style.display="none"
+      nav_profile.style.borderBottom="none"
+  })
 
 </script>

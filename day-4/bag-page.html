@@ -7,7 +7,7 @@
     <title>Document</title>
     <style>
         #bag-nav{
-            border-bottom: 1px solid;
+            border-bottom: 1px solid gainsboro;
         }
         .bag-space-btw{
             display: flex;
@@ -22,14 +22,14 @@
         }
         #bag-product-section{
             width: 60%;
-            border: px solid;
+            border: 0px solid;
             margin-top: 23px;
             display: grid;
             gap: 10px;
         }
         #bag-product-section>div{
             padding: 12px;
-            border: 1px solid;
+            border: 1px solid gainsboro;
         }
         .bag-red{
             border: 1px solid;
@@ -37,7 +37,7 @@
             padding: 5px;
         }
         #bag-price-section{
-            border-left: 1px solid;
+            border-left: 1px solid gainsboro;
             width: 39%;
         }
         #bag-gift{
@@ -67,7 +67,12 @@
             gap: 9px;
         }
         #bag-cards>div{
-            border:1px solid;
+            border:1px solid gainsboro;
+            padding: 9px;
+        }
+        hr{
+            color: gainsboro;
+            border: 1px solid;
         }
         #bag-cards img{
             width: 100%;
@@ -83,6 +88,7 @@
         }
         #bag-nav>div:nth-child(1), #bag-nav>div:nth-child(3){
             width: 7%;
+            cursor: pointer;
         }
         #bag-nav img{
             width: 100%;
@@ -100,7 +106,7 @@
 <body>
     <div>
         <div id="bag-nav" class="bag-space-btw">
-            <div>
+            <div onclick="location.href='http://127.0.0.1:5500/day-2/lp.html'">
                 <img src="https://images.news18.com/ibnlive/uploads/2021/01/1611996262_ynt.jpeg?im=FitAndFill,width=1200,height=675" alt="">
             </div>
             <div>
@@ -119,15 +125,15 @@
         <div id="bag-main">
             <div id="bag-product-section">
                 <div class="bag-space-btw">
-                    <div>Deliver to:</div>
+                    <div>Deliver to: Jagroshan, 824113 <br> Banglore, Karnataka, India, Asai, Earth, Milky-way</div>
                     <div class="bag-red">CHANGE ADDRESS</div>
                 </div>
                 <div>
                     <h5>Available Offers</h5>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                    <p>10% Instant Discount on ICICI Bank Credit Cards on a min spend of Rs.3500. TCA</p>
                 </div>
                 <div>
-                    <p>Yay! No convenience fee on this order</p>
+                    <img width="5%" src="https://constant.myntassets.com/checkout/assets/img/ship-free.png" alt="">   Yay! No convenience fee on this order
                 </div>
                 <div style="border: none;">
                     <h4><span class="bagcount"></span> ITEMS</h4>
@@ -169,8 +175,8 @@
                             <p>Convience Fee <span style="color: red;font-weight: bold;">Know More</span></p>
                         </div>
                         <div style="text-align: end;">
-                            <p>k</p>
-                            <p>k</p>
+                            <p id="bag-total-mrp">k</p>
+                            <p id="bag-total-discount">k</p>
                             <p style="color: red;">Apply Coupon</p>
                             <p><strike>99</strike> <span style="color: green;">FREE</span> </p>
                         </div>
@@ -196,6 +202,7 @@
     console.log(bagdata)
     
     let totalamount=0;
+    let totalmrp=0;
     let mother_div=document.querySelector("#bag-cards")
     bagdata.forEach(function(el,i)
     {
@@ -208,14 +215,35 @@
         imgdiv.append(image)
 
         let descdiv=document.createElement("div")
+        let brand=document.createElement("h3")
+        brand.innerText=el.brand
         let name=document.createElement("p")
-        name.innerText=el.name;
+        name.innerText=el.name
+
+        let microdiv=document.createElement("div")
+        microdiv.setAttribute("class","wl-integers")
+
         let price=document.createElement("h4")
-        price.innerText=el.price;
-        descdiv.append(name,price)
+        price.innerText=el.price
+
+        let sof=document.createElement("p")
+        sof.innerText=el.strikedoffprice
+        sof.style.textDecoration="line-through"
+
+        let discount=document.createElement("p")
+        discount.innerText="("+Math.ceil((el.price/el.strikedoffprice)*100)+"% off)" 
+        discount.style.color="red"
+        microdiv.append(price,sof,discount)
+
+        let delivery=document.createElement("p")
+        delivery.innerText="Delivery by 10 Sept 2022"
+        descdiv.append(brand,name,microdiv,delivery)
 
         let numprice=+el.price
         totalamount+=numprice;
+
+        let mrp=+el.strikedoffprice
+        totalmrp+=mrp;
 
         let canceldiv=document.createElement("div")
         canceldiv.innerHTML="<i class='fa-solid fa-xmark'></i>"
@@ -228,7 +256,8 @@
         div.append(imgdiv,descdiv,canceldiv)
         mother_div.append(div)
     })
-    console.log(totalamount)
+    //console.log(totalamount)
+    //console.log(totalmrp)
 
     function remov(el,i)
     {
@@ -243,5 +272,10 @@
         el.innerText=bagdata.length
     })
     
-    document.querySelector("#bag-total-amount").innerText=totalamount
+    document.querySelector("#bag-total-amount").innerText=totalamount;
+    document.querySelector("#bag-total-mrp").innerText=totalmrp;
+    let totaldiscount=totalmrp-totalamount;
+    let bagdis=document.querySelector("#bag-total-discount")
+    bagdis.style.color="green"
+    bagdis.innerText="-" + totaldiscount;
 </script>
