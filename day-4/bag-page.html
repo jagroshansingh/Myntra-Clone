@@ -24,12 +24,12 @@
             width: 60%;
             border: 0px solid;
             margin-top: 23px;
-            display: grid;
             gap: 10px;
         }
         #bag-product-section>div{
             padding: 12px;
             border: 1px solid gainsboro;
+            margin-bottom: 15px;
         }
         .bag-red{
             border: 1px solid;
@@ -106,7 +106,7 @@
 <body>
     <div>
         <div id="bag-nav" class="bag-space-btw">
-            <div onclick="location.href='http://127.0.0.1:5500/day-2/lp.html'">
+            <div onclick="location.href='http://127.0.0.1:5500/day-2/index.html'">
                 <img src="https://images.news18.com/ibnlive/uploads/2021/01/1611996262_ynt.jpeg?im=FitAndFill,width=1200,height=675" alt="">
             </div>
             <div>
@@ -135,8 +135,9 @@
                 <div>
                     <img width="5%" src="https://constant.myntassets.com/checkout/assets/img/ship-free.png" alt="">   Yay! No convenience fee on this order
                 </div>
-                <div style="border: none;">
+                <div style="border: none; display: flex; justify-content: space-between;" onclick="location.href='http://127.0.0.1:5500/day-4/wishlist-page.html'">
                     <h4><span class="bagcount"></span> ITEMS</h4>
+                    <h4 style="cursor: pointer;">MOVE TO WISHLIST</h4>
                 </div>
                 <div id="bag-cards" style="border: none;">
 
