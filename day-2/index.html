@@ -72,7 +72,7 @@
             height: 400px;
             width:72%;
             background-color: green;
-            position:absolute;
+            position:fixed;
             top:72px;
             left:200px;
             display:none;
@@ -93,7 +93,7 @@
             border:1px solid white;
             line-height: 50%;
             width:20%;
-            position:absolute;
+            position:fixed;
             top:85px;
             left:79%;
             display: none;
@@ -346,6 +346,7 @@
         <p>Edit profile</p>
         <p>Logout</p>
     </div>
+    <!-- <div id="bar"></div> -->
 
     <!-- landing page html -->
     <div id="landing_page">
@@ -501,6 +502,11 @@
     </div>
 </body>
 </html>
+<!-- <script type="module">
+    import navbar from '../components/script/navbar.js'
+    document.getElementById('bar').innerHTML=navbar();
+</script> -->
+
 <script>
     //landing-page script
 
@@ -559,88 +565,10 @@
    {
         el.addEventListener("click",function()
         {
-           location.href="http://127.0.0.1:5500/day-3/product_page.html"
+           location.href="../day-3/product_page.html"
         })
     }) 
 </script>
 
 <!--Navbar script-->
-<script>
-    let redirect=document.querySelectorAll("#drop>div>div>p")
-    redirect.forEach(function(el)
-   {
-        el.addEventListener("click",function()
-        {
-            location.href="http://127.0.0.1:5500/day-3/product_page.html"
-        })
-    }) 
-
-    window.addEventListener("scroll",function()
-    {
-        let scroll=document.querySelector("#drop")
-        scroll.style.position="sticky"
-       // console.log("ddd")
-    })
-
-    window.addEventListener("scroll",function()
-    {
-        let scroll=document.querySelector("#profile_drop")
-        scroll.style.position="sticky"
-       // console.log("ddd")
-    })
-
-    //for navbar major categories
-    let div=document.querySelector("#drop")
-    let cat=document.querySelectorAll("#nav_cat>div")
-    cat.forEach(function(el)
-    {
-        el.addEventListener("mouseover",function()
-        {
-        el.style.borderBottom="solid red"
-        div.style.display="block"
-        })
-        el.addEventListener("mouseout",function()
-        {
-        el.style.borderBottom="none";
-        div.style.display="none"       
-        })
-    })
-     
-    div.addEventListener("mouseover",function()
-    {
-        div.style.display="block"
-    })
-    div.addEventListener("mouseout",function()
-    {
-        div.style.display="none"
-    })
-    
-    //for profile tab
-    let nav_profile=document.querySelector("#nav_profile")
-    let profile_drop=document.querySelector("#profile_drop")
-    nav_profile.addEventListener("mouseover",function()
-    {
-        profile_drop.style.display="block"
-        nav_profile.style.borderBottom="solid red"
-
-    })
-    nav_profile.addEventListener("mouseout",function()
-    {
-        profile_drop.display="none"
-        nav_profile.style.borderBottom="none"
-        
-    })
-    
-    profile_drop.addEventListener("mouseover",function()
-    {
-        profile_drop.style.display="block"
-        nav_profile.style.borderBottom="solid red"
-
-    })
-    profile_drop.addEventListener("mouseout",function()
-    {
-        profile_drop.style.display="none"
-        nav_profile.style.borderBottom="none"
-    })
-
-</script>
+<script src="nav.js"></script>
