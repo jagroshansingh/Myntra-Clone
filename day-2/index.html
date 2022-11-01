@@ -122,6 +122,12 @@
         #lp_sale{
             display: grid;
             grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(3,1fr);
+            gap: 0px;
+            /*border: 1px solid;*/
+        }
+        #lp_sale>div{
+            margin-top: -5px;
         }
         #lp_offers{
             display: flex;
@@ -141,7 +147,8 @@
         }
         #lp_shop_by_categories{
             display: grid;
-            grid-template-columns: repeat(6,1fr);          
+            grid-template-columns: repeat(6,1fr); 
+            grid-template-rows: repeat(5,1fr);
         }
         #landing_page{
             margin-bottom: 40px;
@@ -551,7 +558,7 @@
     }
 
     let shop=document.querySelector("#lp_shop_by_categories")
-    for(let i=0; i<32; i++)
+    for(let i=0; i<30; i++)
     {
         let div=document.createElement("div")
         let img=document.createElement("img")
